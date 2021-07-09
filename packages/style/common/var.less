@@ -1,0 +1,232 @@
+// Color
+// 主要颜色
+@--color-primary: #409EFF;
+// 白色
+@--color-white: #FFFFFF;
+// 黑色
+@--color-black: #000000;
+
+// mix 它用于混合两种颜色以及不透明度
+@--color-primary-light-1: mix(@--color-white, @--color-primary, 10%); /* 53a8ff */
+@--color-primary-light-2: mix(@--color-white, @--color-primary, 20%); /* 66b1ff */
+@--color-primary-light-3: mix(@--color-white, @--color-primary, 30%); /* 79bbff */
+@--color-primary-light-4: mix(@--color-white, @--color-primary, 40%); /* 8cc5ff */
+@--color-primary-light-5: mix(@--color-white, @--color-primary, 50%); /* a0cfff */
+@--color-primary-light-6: mix(@--color-white, @--color-primary, 60%); /* b3d8ff */
+@--color-primary-light-7: mix(@--color-white, @--color-primary, 70%); /* c6e2ff */
+@--color-primary-light-8: mix(@--color-white, @--color-primary, 80%); /* d9ecff */
+@--color-primary-light-9: mix(@--color-white, @--color-primary, 90%); /* ecf5ff */
+
+// 成功颜色
+@--color-success: #67C23A;
+// 警告颜色
+@--color-warning: #E6A23C;
+// 危险颜色
+@--color-danger: #F56C6C;
+// 提示颜色
+@--color-info: #909399;
+
+@--color-success-light: mix(@--color-white, @--color-success, 80%);
+@--color-warning-light: mix(@--color-white, @--color-warning, 80%);
+@--color-danger-light: mix(@--color-white, @--color-danger, 80%);
+@--color-info-light: mix(@--color-white, @--color-info, 80%);
+
+@--color-success-lighter: mix(@--color-white, @--color-success, 90%);
+@--color-warning-lighter: mix(@--color-white, @--color-warning, 90%);
+@--color-danger-lighter: mix(@--color-white, @--color-danger, 90%);
+@--color-info-lighter: mix(@--color-white, @--color-info, 90%);
+
+
+// font
+// 文字 主要颜色
+@--color-text-primary: #303133;
+// 变化颜色
+@--color-text-regular: #606266;
+// 次要颜色
+@--color-text-secondary: #909399;
+// 占位符颜色
+@--color-text-placeholder: #C0C4CC;
+
+@--font-display: 'auto';
+// 特大号
+@--font-size-extra-large: 20px;
+// 偏大
+@--font-size-large: 18px;
+// 中间字体
+@--font-size-medium: 16px;
+// 基础字体
+@--font-size-base: 14px;
+// 小的字体
+@--font-size-small: 13px;
+// 特小号
+@--font-size-extra-small: 12px;
+// 加粗 主要
+@--font-weight-primary: 500;
+// 加粗 次要
+@--font-weight-secondary: 100;
+// 行高 主要
+@--font-line-height-primary: 24px;
+// 行高 次要
+@--font-line-height-secondary: 16px;
+// 文字 禁用色
+@--font-color-disabled-base: #bbb;
+
+
+// 背景颜色
+// 基础 背景色
+@--background-color-base: #F5F7FA;
+
+// 链接颜色
+// 链接文字颜色
+@--link-color: @--color-primary-light-2;
+// 鼠标经过 文字颜色
+@--link-hover-color: @--color-primary;
+
+// border
+// 边框 基础颜色
+@--border-color-base: #DCDFE6;
+// 高亮
+@--border-color-light: #E4E7ED;
+// 更高亮
+@--border-color-lighter: #EBEEF5;
+// 特殊高亮
+@--border-color-extra-light: #F2F6FC;
+
+
+//Border
+// 边框 粗细
+@--border-width-base: 1px;
+// 边框 实线
+@--border-style-base: solid;
+// 边框基础
+@--border-base: @--border-width-base @--border-style-base @--border-color-base;
+// 基础圆角
+@--border-radius-base: 4px;
+// 小圆角
+@--border-radius-small: 2px;
+// 圆
+@--border-radius-circle: 100%;
+// 无圆角
+@--border-radius-zero: 0;
+// 边框 鼠标经过
+@--border-color-hover: @--color-text-placeholder;
+
+
+// box-show
+// 阴影 基础
+@--box-shadow-base: 0 2px 4px rgba(0, 0, 0, .12), 0 0 6px rgba(0, 0, 0, .04);
+// 阴影 黑色
+@--box-shadow-dark: 0 2px 4px rgba(0, 0, 0, .12), 0 0 6px rgba(0, 0, 0, .12);
+// 阴影 高亮
+@--box-shadow-light: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
+
+
+// z-index
+// 元素 层级
+// 默认
+@--index-normal: 1;
+// 顶层
+@--index-top: 1000;
+// 更高
+@--index-popper: 2000;
+
+// disabled
+// 禁用 背景色
+@--disabled-fill-base: @--background-color-base;
+// 禁用 文字颜色
+@--disabled-color-base: @--color-text-placeholder;
+// 禁用 边框色
+@--disabled-border-base: @--border-color-light;
+
+
+/* Button
+-------------------------- */
+// 按钮 字体
+@--button-font-size: @--font-size-base;
+// 按钮 加粗
+@--button-font-weight: @--font-weight-primary;
+// 按钮 圆角
+@--button-border-radius: @--border-radius-base;
+// 按钮 垂直
+@--button-padding-vertical: 12px;
+// 按钮 水平
+@--button-padding-horizontal: 20px;
+
+// 按钮 中间 字体
+@--button-medium-font-size: @--font-size-base;
+// 按钮 中间 边框圆角
+@--button-medium-border-radius: @--border-radius-base;
+// 按钮 中间 垂直
+@--button-medium-padding-vertical: 10px;
+// 按钮 中间 水平
+@--button-medium-padding-horizontal: 20px;
+
+// 按钮 小 字体
+@--button-small-font-size: 12px;
+// 按钮 小 边框 圆角
+@--button-small-border-radius: @--border-radius-base - 1;
+// 按钮 小 垂直内边距
+@--button-small-padding-vertical: 9px;
+// 按钮 小 水平内边距
+@--button-small-padding-horizontal: 15px;
+
+// 按钮 更小 字体
+@--button-mini-font-size: 12px;
+// 按钮 更小 边框 圆角
+@--button-mini-border-radius: @--border-radius-base - 1;
+// 按钮 更小 垂直内边距
+@--button-mini-padding-vertical: 7px;
+// 按钮 更小 水平内边距
+@--button-mini-padding-horizontal: 15px;
+
+// 按钮 默认 字体颜色
+@--button-default-font-color: @--color-text-regular;
+// 按钮 默认 背景颜色
+@--button-default-background-color: @--color-white;
+// 按钮 默认 边框颜色
+@--button-default-border-color: @--border-color-base;
+
+// 按钮 禁用 字体颜色
+@--button-disabled-font-color: @--color-text-placeholder;
+// 按钮 禁用 背景颜色
+@--button-disabled-background-color: @--color-white;
+// 按钮 禁用 边框颜色
+@--button-disabled-border-color: @--border-color-lighter;
+
+// 按钮 主要 字体颜色
+@--button-primary-font-color: @--color-white;
+// 按钮 主要 背景颜色
+@--button-primary-background-color: @--color-primary;
+// 按钮 主要 边框颜色
+@--button-primary-border-color: @--color-primary;
+
+// 按钮 成功 字体颜色
+@--button-success-font-color: @--color-white;
+// 按钮 成功 边框颜色
+@--button-success-border-color: @--color-success;
+// 按钮 成功 背景颜色
+@--button-success-background-color: @--color-success;
+
+// 按钮 警告 边框颜色
+@--button-warning-border-color: @--color-warning;
+// 按钮 警告 字体颜色
+@--button-warning-font-color: @--color-white;
+// 按钮 警告 背景颜色
+@--button-warning-background-color: @--color-warning;
+
+// 按钮 危险 字体颜色
+@--button-danger-font-color: @--color-white;
+// 按钮 危险 边框颜色
+@--button-danger-border-color: @--color-danger;
+// 按钮 危险 背景颜色
+@--button-danger-background-color: @--color-danger;
+
+// 按钮 提示 字体颜色
+@--button-info-font-color: @--color-white;
+// 按钮 提示 背景颜色
+@--button-info-background-color: @--color-info;
+// 按钮 提示 边框颜色
+@--button-info-border-color: @--color-info;
+
+@--button-hover-tint-percent: 20%;
+@--button-active-shade-percent: 10%;
