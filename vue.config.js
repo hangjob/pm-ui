@@ -1,6 +1,7 @@
 const path = require('path')
 const optimization = require('./build/index')
 const isProduction = process.env.NODE_ENV === 'production'
+const webpack = require('webpack')
 
 module.exports = {
     // 修改 pages 入口
@@ -34,6 +35,7 @@ module.exports = {
             })
     },
     configureWebpack: config => {
+        const plugins = []
         // 删除demo.html
         config.plugins.some((plugin, index) => {
             if (plugin.options) {
@@ -45,9 +47,16 @@ module.exports = {
         })
         if (isProduction) {
             config.mode = 'production'
+            plugins.push(
+                new webpack.optimize.LimitChunkCountPlugin({
+                        maxChunks: 1,
+                    },
+                ),
+            )
         }
-
         config.optimization = optimization
-        return {}
+        return {
+            plugins,
+        }
     },
 }

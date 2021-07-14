@@ -1,0 +1,61 @@
+[class*="pm-col-"] {
+    float: left;
+    box-sizing: border-box;
+}
+
+.pm-col-0 {
+    display: none;
+}
+
+// less循环
+.offset-pull-push(@n, @i: 1) when (@i =< @n) {
+    .pm-col-@{i} {
+        width: (1 / 24 * @i * 100) * 1%;
+    }
+    .pm-col-offset-@{i} {
+        margin-left: (1 / 24 * @i * 100) * 1%;
+    }
+    .pm-col-pull-@{i} {
+        position: relative;
+        right: (1 / 24 * @i * 100) * 1%;
+    }
+    .pm-col-push-@{i} {
+        position: relative;
+        left: (1 / 24 * @i * 100) * 1%;
+    }
+
+    .offset-pull-push(@n, (@i + 1));
+}
+
+.offset-pull-push(24);
+
+
+.loop-col-item(@n, @prefix, @i: 1) when (@i =< @n) {
+    .pm-col-@{prefix}-@{i} {
+        width: (1 / 24 * @i * 100) * 1%;
+    }
+
+    .pm-col-@{prefix}-offset-@{i} {
+        margin-left: (1 / 24 * @i * 100) * 1%;
+    }
+
+    .pm-col-@{prefix}-pull-@{i} {
+        position: relative;
+        right: (1 / 24 * @i * 100) * 1%;
+    }
+
+    .pm-col-@{prefix}-push-@{i} {
+        position: relative;
+        left: (1 / 24 * @i * 100) * 1%;
+    }
+}
+
+
+.loop-col(@data, @i: 1) when (@i =< length(@data)) {
+    @item: extract(@data, @i); // 获得每一项
+    .loop-col-item(24,@item);
+    .loop-col(@data, (@i + 1))
+}
+
+@colors: xs, sm, md, lg, xl;
+.loop-col(@colors);

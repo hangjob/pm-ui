@@ -1,0 +1,37 @@
+@import "./common/utils.less";
+@import "./common/config.less";
+
+.flex-justify-content(@name,@value) {
+    &.@{state-prefix}@{name} {
+        justify-content: @value;
+    }
+}
+
+.flex-align-items(@name,@value) {
+    &.@{state-prefix}@{name} {
+        align-items: @value;
+    }
+}
+
+.pm-row {
+    position: relative;
+    box-sizing: border-box;
+    .utils-clearfix();
+
+    &--flex {
+        display: flex;
+
+        &:before,
+        &:after {
+            display: none;
+        }
+
+        .flex-justify-content(justify-center, center);
+        .flex-justify-content(justify-end, flex-end);
+        .flex-justify-content(justify-space-between, space-between);
+        .flex-justify-content(justify-space-around, space-around);
+
+        .flex-align-items(align-middle,center);
+        .flex-align-items(align-bottom,flex-end);
+    }
+}

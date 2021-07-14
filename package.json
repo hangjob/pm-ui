@@ -4,6 +4,16 @@
   "private": false,
   "description": "pm-ui组件库",
   "main": "lib/index.js",
+  "author": {
+    "name": "yanghang",
+    "email": "470193837@qq.com"
+  },
+  "bugs": {
+    "url": "https://github.com/hangjob/pm-ui/issues",
+    "email": "470193837@qq.com"
+  },
+  "keywords": ["vue","vue-ui"],
+  "license": "MIT",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
@@ -35,7 +45,8 @@
     "less": "^4.1.1",
     "less-plugin-autoprefix": "^2.0.0",
     "uglifyjs-webpack-plugin": "^2.2.0",
-    "vue-template-compiler": "^2.6.11"
+    "vue-template-compiler": "^2.6.11",
+    "webpack": "^4.43.0"
   },
   "eslintConfig": {
     "root": true,

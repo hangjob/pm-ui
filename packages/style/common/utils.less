@@ -1,6 +1,20 @@
+// less 文档 https://lesscss.org/features/
+// sass 文档 https://www.sass.hk/skill/sass40.html
+
 // 文本是否能被选择
 .utils-user-select(@value:none) {
     -moz-user-select: @value;
     -webkit-user-select: @value;
     -ms-user-select: @value;
+}
+
+// 清除浮动
+.utils-clearfix() {
+    &::before, &::after {
+        display: table;
+        content: '';
+    }
+    &::after {
+        clear: both;
+    }
 }

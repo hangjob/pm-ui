@@ -1,8 +1,14 @@
 import PmButton from './button'
+import PmRow from './row'
+import PmCol from './col'
+
+
 
 // 存储组件列表
 const components = [
-    PmButton
+    PmButton,
+    PmRow,
+    PmCol
 ]
 
 // 定义 install 方法，接收 Vue 作为参数。如果使用 use 注册插件，则所有的组件都将被注册
@@ -22,5 +28,7 @@ if (typeof window !== 'undefined' && window.Vue) {
 // 2.把组件到出去，模块化安装
 export default {
     install,
-    PmButton
+    PmButton,
+    PmRow,
+    PmCol
 }
