@@ -12,7 +12,10 @@
     "url": "https://github.com/hangjob/pm-ui/issues",
     "email": "470193837@qq.com"
   },
-  "keywords": ["vue","vue-ui"],
+  "keywords": [
+    "vue",
+    "vue-ui"
+  ],
   "license": "MIT",
   "scripts": {
     "serve": "vue-cli-service serve",
@@ -22,10 +25,15 @@
     "style": "gulp style"
   },
   "dependencies": {
-    "axios": "^0.21.1",
+    "axios": "^0.20.0",
     "core-js": "^3.6.5",
+    "crypto-js": "^4.0.0",
     "less-loader": "^6.0.0",
-    "vue": "^2.6.11"
+    "lodash": "^4.17.20",
+    "vue": "^2.6.11",
+    "vue-router": "^3.4.3",
+    "vuex": "^3.5.1",
+    "vuex-persistedstate": "^3.1.0"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.5.0",

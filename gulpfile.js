@@ -21,7 +21,7 @@ gulp.task('less', function () {
 
 // 转换Rem
 gulp.task('pxToRem', function () {
-    return gulp.src('./lib/css/*.css') //该任务针对的文件
+    return gulp.src('./lib/css/*.css')
         .pipe(replace(/(\d+)px/g, function (match, p1) {
             return Number(p1) / 750 + 'rem'
         })).pipe(gulp.dest('./lib/css'))//将会在new下生成替换好的css文件
