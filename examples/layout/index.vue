@@ -31,7 +31,7 @@ export default {
     overflow: hidden;
     padding-right: 200px;
     .pm-doc-content{
-        background-color: #dddddd;
+
     }
 }
 </style>

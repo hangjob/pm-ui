@@ -1,5 +1,6 @@
 const path = require('path')
 const optimization = require('./build/index')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 const isProduction = process.env.NODE_ENV === 'production'
 const webpack = require('webpack')
 
@@ -10,6 +11,7 @@ module.exports = {
             entry: 'examples/main.js', // 入口
             template: 'public/index.html', // 模板
             filename: 'index.html', // 输出文件
+            title:'品茗UI'
         },
     },
     // 扩展 webpack 配置
