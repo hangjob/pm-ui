@@ -5,10 +5,8 @@ import Layout from '../layout'
 Vue.use(Router)
 
 const Home = () => import('@/views/home')
-const Button = () => import('@/views/button');
-[Home, Button].forEach(component => {
-    console.log(component().componentTitle)
-})
+const Button = () => import('@/views/button')
+const Quickstart = () => import('@/views/quickstart')
 const mainRoutes = [
     {
         path: '/',
@@ -21,7 +19,15 @@ const mainRoutes = [
                 name: 'home',
                 component: Home,
                 meta: {
-                    title: Home.componentTitle,
+                    title: '首页',
+                },
+            },
+            {
+                path: '/quickstart',
+                name: 'quickstart',
+                component: Quickstart,
+                meta: {
+                    title: '快速上手',
                 },
             },
             {
@@ -29,7 +35,7 @@ const mainRoutes = [
                 name: 'button',
                 component: Button,
                 meta: {
-                    title: Button.componentTitle,
+                    title: 'Button按钮',
                 },
             },
         ],

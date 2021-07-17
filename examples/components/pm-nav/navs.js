@@ -8,7 +8,7 @@ const navs = [
             },
             {
                 title: '快速上手',
-                url: '',
+                url: '/quickstart',
             },
             {
                 title: '更新日志',

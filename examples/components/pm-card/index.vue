@@ -34,6 +34,24 @@ export default {
             color: #1989fa;
             -webkit-font-smoothing: auto;
         }
+        code{
+            display: inline;
+            margin: 0 2px;
+            padding: 2px 5px;
+            font-size: 14px;
+            font-family: inherit;
+            word-break: keep-all;
+            background-color: #f7f8fa;
+            border-radius: 4px;
+            -webkit-font-smoothing: antialiased;
+            position: relative;
+            overflow-x: auto;
+            color: #58727e;
+            font-weight: 400;
+            line-height: 26px;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
     }
     >ul li,>ol li{
         position: relative;

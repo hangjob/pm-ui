@@ -25,7 +25,7 @@ export default {
 <style lang="less" scoped>
 .pm-doc-container{
     width: 1680px;
-    margin: 20px auto 0 auto;
+    margin: 0px auto 0 auto;
     box-sizing: border-box;
     padding-left: 300px;
     overflow: hidden;

@@ -3,7 +3,6 @@ const optimization = require('./build/index')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const isProduction = process.env.NODE_ENV === 'production'
 const webpack = require('webpack')
-
 module.exports = {
     // 修改 pages 入口
     pages: {
@@ -11,7 +10,7 @@ module.exports = {
             entry: 'examples/main.js', // 入口
             template: 'public/index.html', // 模板
             filename: 'index.html', // 输出文件
-            title:'品茗UI'
+            title: '品茗UI',
         },
     },
     // 扩展 webpack 配置
@@ -31,6 +30,19 @@ module.exports = {
             tap(options => {
                 // 修改它的选项...
                 return options
+            })
+        config.module.rule('md').
+            test(/\.md$/).
+            use('vue-loader').
+            loader('vue-loader').
+            end().
+            use('vue-markdown-loader').
+            loader('vue-markdown-loader/lib/markdown-compiler').
+            options({
+                raw: true,
+                preprocess: function(markdownIt, source) {
+                    return source;
+                },
             })
     },
     configureWebpack: config => {
