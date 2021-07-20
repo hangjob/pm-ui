@@ -1,29 +1,119 @@
-// 自定义loader：
-// 功能：导入markdown文件，将markdown转换成html导出
+const MarkdownIt = require('markdown-it')
+const MarkdownItContainer = require('markdown-it-container')
+const VueTemplateComplier = require('vue-template-compiler')
+const hljs = require('highlight.js')
+const { parse, compileTemplate } = require('@vue/component-compiler-utils')
 
+module.exports = function (source) {
+    // 需要解析成vue代码块集合
+    const componentCodeList = []
+    let styleCodeList = []
+    const globalScript = []
+    // 初始还MarkdownIt用于转换md文件为html
+    const markdownIt = MarkdownIt({
+        html: true,
+        xhtmlOut: true,
+        // 将markdown中的代码块用hljs高亮显示
+        highlight: function (str, lang) {
+            if (lang && hljs.getLanguage(lang)) {
+                return `<pre class="hljs"><code>${
+                    hljs.highlight(lang, str, true).value
+                }</code></pre>`
+            }
+            return `<pre class="hljs"><code>${markdownIt.utils.escapeHtml(
+                str,
+            )}</code></pre>`
+        },
+    })
+    // 解析【:::tip:::】
+    markdownIt.use(MarkdownItContainer, 'tip')
+    // 解析【:::warning:::】
+    markdownIt.use(MarkdownItContainer, 'warning')
+    // 使用【markdown-it-container】插件解析【:::snippet :::】代码块为vue渲染
+    markdownIt.use(MarkdownItContainer, 'snippet', {
+        // 验证代码块为【:::snippet :::】才进行渲染
+        validate (params) {
+            return params.trim().match(/^snippet\s*(.*)$/)
+        },
+        // 代码块渲染
+        render (tokens, index) {
+            const token = tokens[index]
+            const tokenInfo = token.info.trim().match(/^snippet\s*(.*)$/)
+            if (token.nesting === 1) {
+                // 获取snippet第一行的表述内容
+                const desc = tokenInfo && tokenInfo.length > 1
+                    ? tokenInfo[1]
+                    : ''
+                // 获取vue组件示例的代码
+                const nextIndex = tokens[index + 1]
+                let content = nextIndex.type === 'fence'
+                    ? nextIndex.content
+                    : ''
+                // 将content解析为vue组件基本属性对象;
+                let { template, script, styles } = parse({
+                    source: content,
+                    compiler: VueTemplateComplier,
+                    needMap: false,
+                })
+                styleCodeList = styleCodeList.concat(styles)
+                // 将template的转为render函数
+                let templateCodeRender = ''
+                if (template && template.content) {
+                    const { code } = compileTemplate({
+                        source: template.content,
+                        compiler: VueTemplateComplier,
+                    })
+                    templateCodeRender = code
+                }
 
-// 插件：marked实现将markdown内容转换成html的功能
-
-// loader需要返回一段js代码：因为在webpack加载时会将这段代码拼接到打包代码中~
-// 输入：function的参数作为输入值：这里是原有的markdown内容，source
-// 输出：return一个返回值作为输出：这里是转换成html的内容，html（
-// 输出注意：1、需要将返回值作为一个模块导出，才能更好的在webpack打包文件中使用
-// 输出注意：2、
-module.exports = source => {
-
-    const html = 1111;
-    console.log(html)
-    // webpack将loader加载后会将代码放到打包文件boundle.js中，一个loader对应一个(function(){}) 模块；所以在loader中需要导出
-    // webpack的打包文件boundle.js中，支持CommonJS的方式、ES Modules的方式导出
-
-    // loader的
-    // 1、CommonJS的方式：输出的模块转换为字符串的形式return
-    // return `module.exports = ${JSON.stringify(html)}`//JSON.stringify转换html的换行符和空格
-
-    // 2、ES Modules：webpack内部会自动转换export default导出的代码
-    // return `export default ${JSON.stringify(html)}`
-
-
-    // 3、直接返回html，再将结果交给html-loader处理（loader是管道的形式处理，可以串联）
-    return html
+                // 获取script的代码
+                script = script ? script.content : ''
+                if (script) {
+                    const [global, content] = script.split(/export\s+default/)
+                    globalScript.push(global.trim())
+                    script = `const exportJavaScript = ${content}`
+                }
+                else {
+                    script = 'const exportJavaScript = {};'
+                }
+                // 代码块解析将需要解析vue组件的存储，渲染html用组件名称替代
+                const name = `vc-snippent-${componentCodeList.length}`
+                // 渲染组件代码添加到数据集合
+                componentCodeList.push(`"${name}":(function () {
+          ${templateCodeRender}
+          ${script}
+           return {
+             ...exportJavaScript,
+            ${templateCodeRender ? 'render,' : ''} 
+            ${templateCodeRender ? 'staticRenderFns,' : ''}   
+          }
+        })()`)
+                // 将需要渲染的示例用vc-snippet组件包裹替换插槽显示示例效果
+                return `<vc-snippet>
+                  <div slot="desc">${markdownIt.render(desc)}</div>
+                  <${name} slot="source" />
+                  <div slot="code">`
+            }
+            return `</div></vc-snippet> `
+        },
+    })
+    // 将所有转换好的代码字符串拼接成vue单组件template、script、style格式
+    return `
+        <template>
+          <div class="vc-snippet-doc">
+            ${markdownIt.render(source)}
+          </div>
+        </template>
+        <script>
+           ${globalScript.join(' ')}
+           export default {
+           name: 'vc-component-doc',
+           components: {
+            ${componentCodeList.join(',')}
+           }
+         }
+       </script>
+       <style lang='less'>
+         ${Array.from(styleCodeList, m => m.content).join('\n')}
+       </style>`
 }

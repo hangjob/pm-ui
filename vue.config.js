@@ -1,5 +1,6 @@
 const path = require('path')
 const optimization = require('./build/index')
+const markdownRender = require('markdown-it')()
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const isProduction = process.env.NODE_ENV === 'production'
 const webpack = require('webpack')
@@ -31,19 +32,21 @@ module.exports = {
                 // 修改它的选项...
                 return options
             })
+        // 解析Markdown文件转成vue组件
         config.module.rule('md').
-            test(/\.md$/).
+            test(/\.md/).
             use('vue-loader').
             loader('vue-loader').
-            end().
-            use('vue-markdown-loader').
-            loader('vue-markdown-loader/lib/markdown-compiler').
             options({
-                raw: true,
-                preprocess: function(markdownIt, source) {
-                    return source;
+                compilerOptions: {
+                    preserveWhitespace: false,
                 },
-            })
+            }).
+            end().
+            use('markdown-loader').
+            loader(require('path').
+                resolve(__dirname, './build/md-loader/index.js')).
+            end()
     },
     configureWebpack: config => {
         const plugins = []
@@ -70,4 +73,11 @@ module.exports = {
             plugins,
         }
     },
+    devServer: {
+        overlay: {
+            warnings: false, //不显示警告
+            errors: false	//不显示错误
+        }
+    },
+    lintOnSave:false //关闭eslint检查
 }
