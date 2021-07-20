@@ -47,7 +47,7 @@ export default {
     position: relative;
     box-sizing: border-box;
     background-color: #fff;
-    border-radius: 12px;
+    border-radius: 15px;
     box-shadow: 0 6px 10px #ebedf0;
 }
 
