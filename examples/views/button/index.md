@@ -1,10 +1,14 @@
 ## Button 按钮
-:::snippet 通过 `pm-button` 标签初始化按钮。
+
+:::snippet 通过 `pm-button` 标签初始化按钮
+
+### 基础用法
+
 ```html
+
 <template>
     <div>
-        <h3>基础用法</h3>
-        <pm-button>基础用法</pm-button>
+        <pm-button>基础按钮</pm-button>
         <pm-button type="primary">主要按钮</pm-button>
         <pm-button type="success">成功按钮</pm-button>
         <pm-button type="info">信息按钮</pm-button>
@@ -12,104 +16,41 @@
         <pm-button type="danger" @click="handleClick">危险按钮</pm-button>
     </div>
 </template>
-<script>
-    export default  {
-        methods:{
-            handleClick(){
-                alert(1)
-            }
-        }
-    }
-</script>
 ```
 
 :::
 
-## 文本设置
+## API
 
-:::snippet 通过 `text` 设置按钮文本。
+:::api
 
-```html
-
-<template>
-    <div>
-        <pm-button text="Default"></pm-button>
-    </div>
-</template>
-```
-
-:::
-
-## 事件绑定
-
-:::snippet 绑定 `click` 事件。
-
-```html
-
-<template>
-    <div>
-        <pm-button text="Default" @click="handleButtonClick"></pm-button>
-    </div>
-</template>
-
-<script>
-    export default {
-        methods: {
-            handleButtonClick () {
-                alert(1);
-            },
-        },
-    };
-</script>
-```
-
-:::
-
-## JSX 语法支持
-
-:::snippet 示例代码支持`jsx`渲染。
-
-```html
-
-<script>
-    export default {
-        render () {
-            return (
-                    <div>
-                        <pm-button
-                                text="Default"
-                                onClick={() => {
-                                    this.handleButtonClick();
-                                }}
-                        ></pm-button>
-                    </div>
-            );
-        },
-        methods: {
-            handleButtonClick () {
-                alert(1);
-            },
-        },
-    };
-</script>
-```
-
-:::
-
-## Button Attributes
+### Props
 
 | 参数 | 说明     | 类型   | 可选值 | 默认值 |
 | ---- | -------- | ------ | ------ | ------ |
-| text | 按钮文本 | String | —      | —      |
+| type | 类型 | string | primary / success / warning / danger / info / text| - |
+| round | 是否圆角按钮 | boolean | - | false |
+| circle | 是否圆形按钮 | boolean | - | false |
+| loading | 是否加载中状态 | boolean | - | false |
+| disabled | 是否禁用状态 | boolean | - | false |
+| icon | 图标类名 | string | - | - |
 
-## Button Events
+:::
+:::api
+
+### Events
 
 | 事件名称 | 说明     | 回调参数 |
 | -------- | -------- | -------- |
 | click    | 单击触发 | event    |
 
-## Button Slots
+:::
+:::api
+
+### Slots
 
 | 名称 | 说明     |
 | ---- | -------- |
 | —    | 按钮内容 |
+
+:::

@@ -7,9 +7,7 @@ import './style/reset.less'
 import '../packages/style/index.less'
 import './style/vc-snippet.less'
 import './components/index'
-
-// 高亮
-import "highlight.js/styles/color-brewer.css";
+import 'highlight.js/styles/atom-one-dark.css'
 
 Vue.config.productionTip = false;
 Vue.use(PmUI);

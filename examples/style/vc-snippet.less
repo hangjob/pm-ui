@@ -1,12 +1,11 @@
 .vc-snippet-doc {
-    h2{
-        margin: 45px 0 20px;
-        font-size: 25px;
-        color: #323233;
-        font-weight: normal;
-        line-height: 1.5;
-    }
-    .vc-snippet--demo {
+    .vc-snippet-card{
+        position: relative;
+        box-sizing: border-box;
+        background-color: #fff;
+        border-radius: 15px;
+        box-shadow: 0 6px 10px #ebedf0;
+        margin-top: 20px;
         h1 {
             margin: 45px 0 20px;
             font-size: 28px;
@@ -16,7 +15,7 @@
         }
 
         h2 {
-            margin: 45px 0 20px;
+            margin-top: 40px;
             font-size: 25px;
             color: #323233;
             font-weight: normal;
@@ -42,7 +41,6 @@
         a {
             margin: 0 1px;
             color: #1989fa;
-            -webkit-font-smoothing: auto;
         }
 
         code {
@@ -86,5 +84,46 @@
             }
         }
     }
+    h2{
+        margin-top: 40px;
+        font-size: 25px;
+        color: #323233;
+        font-weight: normal;
+        line-height: 1.5;
+        text-indent: 5px;
+    }
 
+    .vc-snippet-api{
+        padding: 24px;
+        box-sizing: border-box;
+        >table{
+            width: 100%;
+            margin-top: 12px;
+            color: #34495e;
+            font-size: 14px;
+            line-height: 1.5;
+            border-collapse: collapse;
+            thead{
+                tr{
+                    &:first-child{
+                        padding-left: 0;
+                    }
+                    th{
+                        padding: 8px 10px;
+                        font-weight: 600;
+                        text-align: left;
+                    }
+                }
+            }
+            tbody{
+                tr{
+                    td{
+                        padding: 8px;
+                        border-top: 1px solid #f1f4f8;
+                        font-size: 14px;
+                    }
+                }
+            }
+        }
+    }
 }

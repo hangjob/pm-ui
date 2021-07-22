@@ -1,6 +1,7 @@
 <template>
-    <div class="vc-snippet">
+    <div class="vc-snippet vc-snippet-card">
         <div class="vc-snippet--demo">
+            <slot name="explain"/>
             <!-- 代码生成vue示例 -->
             <slot name="source"/>
         </div>
@@ -19,7 +20,6 @@
 </template>
 
 <script>
-import 'highlight.js/styles/color-brewer.css'
 
 export default {
     name: 'VcSnippet',
@@ -43,13 +43,6 @@ export default {
 </script>
 
 <style lang="less" scoped>
-.vc-snippet {
-    position: relative;
-    box-sizing: border-box;
-    background-color: #fff;
-    border-radius: 15px;
-    box-shadow: 0 6px 10px #ebedf0;
-}
 
 .vc-snippet--demo {
     box-sizing: border-box;
@@ -58,8 +51,6 @@ export default {
     border-bottom: 1px solid #ebedf0;
     font-size: 12px;
 }
-
-
 
 .vc-snippet--desc {
     position: relative;
@@ -110,13 +101,11 @@ export default {
 .vc-snippet--code {
     box-sizing: border-box;
     border-top: 1px solid #ebedf0;
-
-
 }
 
 .vc-snippet--code /deep/ {
     code {
-        background: #f9f9f9;
+        background-color: #fff;
         font-family: Consolas, Menlo, Courier, monospace;
         border: none;
         display: block;
@@ -128,7 +117,7 @@ export default {
     .hljs {
         padding: 0;
         margin: 0;
+        background-color: #fff;
     }
 }
 </style>
-© 2021 GitHub, Inc.
