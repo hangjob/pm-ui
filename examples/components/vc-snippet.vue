@@ -118,6 +118,8 @@ export default {
         padding: 0;
         margin: 0;
         background-color: #fff;
+        border-bottom-right-radius: 5px;
+        border-bottom-left-radius: 5px;
     }
 }
 </style>

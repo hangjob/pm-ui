@@ -13,7 +13,22 @@
         <pm-button type="success">成功按钮</pm-button>
         <pm-button type="info">信息按钮</pm-button>
         <pm-button type="warning">警告按钮</pm-button>
-        <pm-button type="danger" @click="handleClick">危险按钮</pm-button>
+        <pm-button type="danger">危险按钮</pm-button>
+    </div>
+</template>
+```
+
+:::
+
+:::snippet ss
+
+### 加载中
+
+```html
+
+<template>
+    <div>
+        <pm-button>基础按钮</pm-button>
     </div>
 </template>
 ```

@@ -29,7 +29,7 @@ function colorblockRenderer (token, idx) {
             return `${token.content}`
         }
     }
-    return '';
+    return ''
 }
 
 module.exports = function (source) {
@@ -78,18 +78,16 @@ module.exports = function (source) {
         },
         // 代码块渲染
         render (tokens, index) {
-            let _index = 0
             const token = tokens[index]
             const tokenInfo = token.info.trim().match(/^snippet\s*(.*)$/)
-            let explain = ''
-
             if (token.nesting === 1) {
+                let explain = ''
+                let _index = 0
                 // 获取snippet第一行的表述内容
                 const desc = tokenInfo && tokenInfo.length > 1
                     ? tokenInfo[1]
                     : ''
 
-                // console.log(tokens);
                 for (let i = 0, len = tokens.length; i < len; i++) {
                     if (tokens[i].type === 'fence') {
                         _index = i
@@ -98,6 +96,7 @@ module.exports = function (source) {
                     else {
                         if (i > index) {
                             explain += colorblockRenderer(tokens[i])
+                            // 移除代码块 防止添加到
                             tokens[i].children = []
                             tokens[i].content = ''
                             tokens[i].hidden = true
