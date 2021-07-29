@@ -1,5 +1,4 @@
 const MarkdownIt = require('markdown-it')
-const Renderer = require('markdown-it/lib/renderer')
 const MarkdownItContainer = require('markdown-it-container')
 const VueTemplateComplier = require('vue-template-compiler')
 const hljs = require('highlight.js')
@@ -11,22 +10,34 @@ const { parse, compileTemplate } = require('@vue/component-compiler-utils')
  * */
 
 
+
+
 function colorblockRenderer (token, idx) {
-    let { tag, type, content } = token
+    let { tag, type, content, children } = token;
+    console.log(token)
     if (tag) {
-        if (type === 'paragraph_open' || type === 'heading_open') {
+        if (type === 'paragraph_open' || type === 'heading_open' || type === 'blockquote_open') {
             return `<${tag}>`
         }
-        if (type === 'paragraph_close' || type === 'heading_close') {
+        if (type === 'paragraph_close' || type === 'heading_close' || type === 'blockquote_close') {
             return `</${tag}>`
+        }
+        if (type === 'code_inline') {
+            return `<${tag}>${content}</${tag}>`
         }
     }
     else {
-        if (type === 'inline') {
-            return `${content}`
-        }
-        if (type === 'html_block') {
-            return `${token.content}`
+        if (type === 'inline' || type === 'html_block' || type === 'text') {
+            if (children && children.length) {
+                let lnlineHtml = ''
+                for (let i = 0, len = children.length; i < len; i++) {
+                    lnlineHtml += colorblockRenderer(children[i])
+                }
+                return lnlineHtml
+            }
+            else {
+                return `${content}`
+            }
         }
     }
     return ''
@@ -44,11 +55,11 @@ module.exports = function (source) {
         // 将markdown中的代码块用hljs高亮显示
         highlight: function (str, lang) {
             if (lang && hljs.getLanguage(lang)) {
-                return `<pre class="hljs"><code>${
+                return `<pre class="hljs"><code class="code">${
                     hljs.highlight(lang, str, true).value
                 }</code></pre>`
             }
-            return `<pre class="hljs"><code>${markdownIt.utils.escapeHtml(
+            return `<pre class="hljs"><code class="code">${markdownIt.utils.escapeHtml(
                 str,
             )}</code></pre>`
         },
@@ -89,7 +100,7 @@ module.exports = function (source) {
                     : ''
 
                 for (let i = 0, len = tokens.length; i < len; i++) {
-                    if (tokens[i].type === 'fence') {
+                    if (tokens[i].type === 'fence' && i > index) {
                         _index = i
                         break
                     }
@@ -103,7 +114,6 @@ module.exports = function (source) {
                         }
                     }
                 }
-
                 // 获取vue组件示例的代码
                 const nextIndex = tokens[_index]
                 let content = nextIndex.type === 'fence'
@@ -126,7 +136,6 @@ module.exports = function (source) {
                     })
                     templateCodeRender = code
                 }
-
                 // 获取script的代码
                 script = script ? script.content : ''
                 if (script) {
@@ -149,17 +158,27 @@ module.exports = function (source) {
                     ${templateCodeRender ? 'staticRenderFns,' : ''}   
                 }
                 })()`)
-                // 将需要渲染的示例用vc-snippet组件包裹替换插槽显示示例效果
 
+                // 解决模板变量报错
+                markdownIt.renderer.rules.fence = genInlineLabel(markdownIt.renderer.rules.fence);
+
+                // 将需要渲染的示例用vc-snippet组件包裹替换插槽显示示例效果
                 return `<vc-snippet>
                   <div slot="desc">${markdownIt.render(desc)}</div>
-                  <${name} slot="source" />
-                  <div slot="explain">${explain}</div>
+                    <${name} slot="source" />
+                    <div class="vc-snippet--explain" slot="explain">${explain}</div>
                   <div slot="code">`
             }
             return `</div></vc-snippet> `
         },
     })
+    function genInlineLabel (render) {
+        return function() {
+            return render.apply(this, arguments)
+            .replace('{{', '{ { ')
+            .replace('}}', ' } }');
+        };
+    }
     // 将所有转换好的代码字符串拼接成vue单组件template、script、style格式
     return `
         <template>
