@@ -1,4 +1,5 @@
 import PmButton from './button'
+import PmButtonGroup from './button-group'
 import PmRow from './row'
 import PmCol from './col'
 
@@ -7,6 +8,7 @@ import PmCol from './col'
 // 存储组件列表
 const components = [
     PmButton,
+    PmButtonGroup,
     PmRow,
     PmCol
 ]
@@ -29,6 +31,7 @@ if (typeof window !== 'undefined' && window.Vue) {
 export default {
     install,
     PmButton,
+    PmButtonGroup,
     PmRow,
     PmCol
 }

@@ -45,11 +45,12 @@ export default {
 <style lang="less" scoped>
 
 .vc-snippet--demo {
-    box-sizing: border-box;
-    padding: 24px;
-    color: #333333;
-    border-bottom: 1px solid #ebedf0;
-    font-size: 12px;
+    /deep/ .pm-row {
+        margin-bottom: 15px;
+    }
+    /deep/ .pm-row:last-child {
+        margin-bottom: 0;
+    }
 }
 
 .vc-snippet--desc {
@@ -57,7 +58,7 @@ export default {
     box-sizing: border-box;
     width: 100%;
     min-height: 44px;
-    padding: 10px 50px 10px 20px;
+    padding: 10px 50px 0px 20px;
     font-size: 14px;
     transition: background-color 0.4s;
     line-height: 1.8;

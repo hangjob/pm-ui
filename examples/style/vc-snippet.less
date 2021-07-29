@@ -1,11 +1,14 @@
 .vc-snippet-doc {
-    .vc-snippet-card{
+    margin-bottom: 50px;
+
+    .vc-snippet-card {
         position: relative;
         box-sizing: border-box;
         background-color: #fff;
         border-radius: 15px;
         box-shadow: 0 6px 10px #ebedf0;
-        margin-top: 20px;
+        margin-top: 30px;
+
         h1 {
             margin: 45px 0 20px;
             font-size: 28px;
@@ -28,10 +31,18 @@
             font-size: 19px;
         }
 
+        h4 {
+            margin-top: 10px;
+            margin-bottom: 10px;
+            font-weight: 600;
+            font-size: 15px;
+        }
+
         p {
             color: #34495e;
             font-size: 15px;
             line-height: 26px;
+            margin-bottom: 15px;
         }
 
         strong {
@@ -83,50 +94,83 @@
                 content: '';
             }
         }
+
+        .vc-snippet--demo {
+            box-sizing: border-box;
+            padding: 24px;
+            color: #333333;
+            border-bottom: 1px solid #ebedf0;
+            font-size: 12px;
+
+            .vc-snippet--explain {
+                margin-bottom: 15px;
+
+                blockquote {
+                    padding: 15px 20px;
+                    margin: 20px 0;
+                    border-left: 3px solid #59c4a6;
+                    background-color: #f3f5f7;
+                    border-radius: 2px;
+
+                    p {
+                        margin: 0;
+                    }
+                }
+            }
+        }
     }
-    >h2,>h3,>p{
+
+    > h2, > h3, > p {
 
         color: #323233;
         font-weight: normal;
         line-height: 1.5;
         text-indent: 5px;
     }
-    > h2{
+
+    > h2 {
         margin-top: 40px;
         font-size: 25px;
     }
+
     > h3 {
         margin-top: 30px;
         font-size: 20px;
     }
-    > p{
+
+    > p {
         font-size: 14px;
     }
-    .vc-snippet-api{
+
+    .vc-snippet-api {
         padding: 24px;
         box-sizing: border-box;
-        >table{
+
+        > table {
             width: 100%;
             margin-top: 12px;
             color: #34495e;
             font-size: 14px;
             line-height: 1.5;
             border-collapse: collapse;
-            thead{
-                tr{
-                    &:first-child{
+
+            thead {
+                tr {
+                    &:first-child {
                         padding-left: 0;
                     }
-                    th{
+
+                    th {
                         padding: 8px 10px;
                         font-weight: 600;
                         text-align: left;
                     }
                 }
             }
-            tbody{
-                tr{
-                    td{
+
+            tbody {
+                tr {
+                    td {
                         padding: 8px;
                         border-top: 1px solid #f1f4f8;
                         font-size: 14px;
@@ -134,5 +178,20 @@
                 }
             }
         }
+    }
+
+    .hljs {
+        background: none;
+    }
+
+    code.code {
+        line-height: 1.8;
+        font-size: 12px;
+        padding: 18px 24px;
+        background-color: #f8f8f8;
+        border: 1px solid #f8f8f847;
+        border-radius: 4px;
+        display: block;
+        font-family: Menlo, Monaco, Consolas, Courier, monospace;
     }
 }

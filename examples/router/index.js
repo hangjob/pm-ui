@@ -5,8 +5,8 @@ import Layout from '../layout'
 Vue.use(Router)
 
 const Home = () => import('@/views/home')
-const Button = () => import('../views/button/index.md')
-const Quickstart = () => import('@/views/quickstart')
+const Button = () => import('@/views/button/doc/index.md')
+const Quickstart = () => import('@/views/quickstart/doc/index.md')
 const mainRoutes = [
     {
         path: '/',

@@ -91,7 +91,6 @@
     cursor: pointer;
     background: @--button-default-background-color;
     border: @--border-base;
-    border-color: @--button-default-border-color;
     color: @--button-default-font-color;
     -webkit-appearance: none;
     text-align: center;
@@ -134,9 +133,102 @@
         border: 0;
     }
 
-    & [class*="el-icon-"] {
+    & [class*="pm-icon-"] {
         & + span {
             margin-left: 5px;
+        }
+    }
+
+
+    &.is-disabled {
+        &,
+        &:hover,
+        &:focus {
+            color: @--button-disabled-font-color;
+            cursor: not-allowed;
+            background-image: none;
+            background-color: @--button-disabled-background-color;
+            border-color: @--button-disabled-border-color;
+        }
+
+        &.pm-button--text {
+            background-color: transparent;
+        }
+
+        &.is-plain {
+            &,
+            &:hover,
+            &:focus {
+                background-color: @--color-white;
+                border-color: @--button-disabled-border-color;
+                color: @--button-disabled-font-color;
+            }
+        }
+    }
+
+    &.is-loading {
+        position: relative;
+        pointer-events: none;
+
+        &:before {
+            pointer-events: none;
+            content: '';
+            position: absolute;
+            left: -1px;
+            top: -1px;
+            right: -1px;
+            bottom: -1px;
+            border-radius: inherit;
+            background-color: rgba(255, 255, 255, .35);
+        }
+    }
+
+    &.is-round {
+        border-radius: 20px;
+        padding: 12px 23px;
+    }
+
+    &.is-circle {
+        border-radius: 50%;
+        padding: @--button-padding-horizontal;
+    }
+
+    &--medium {
+        .button-size(
+                @--button-medium-padding-vertical,
+                @--button-medium-padding-horizontal,
+                @--button-medium-font-size,
+                @--button-medium-border-radius
+        );
+
+        &.is-circle {
+            padding: @--button-medium-padding-vertical;
+        }
+    }
+
+    &--small {
+        .button-size(
+                @--button-small-padding-vertical,
+                @--button-small-padding-horizontal,
+                @--button-small-font-size,
+                @--button-small-border-radius
+        );
+
+        &.is-circle {
+            padding: @--button-small-padding-vertical;
+        }
+    }
+
+    &--mini {
+        .button-size(
+                @--button-mini-padding-vertical,
+                @--button-mini-padding-horizontal,
+                @--button-mini-font-size,
+                @--button-mini-border-radius
+        );
+
+        &.is-circle {
+            padding: @--button-mini-padding-vertical;
         }
     }
 
@@ -179,4 +271,86 @@
                 @--button-danger-border-color
         );
     }
+
+    &-group {
+        .utils-clearfix();
+        display: inline-block;
+        vertical-align: middle;
+        & + & {
+            margin-left: 10px;
+        }
+        & > .pm-button {
+            float: left;
+            position: relative;
+
+            & + .pm-button {
+                margin-left: 0;
+            }
+
+            &.is-disabled {
+                z-index: 1;
+            }
+
+            &:first-child {
+                border-top-right-radius: 0;
+                border-bottom-right-radius: 0;
+            }
+
+            &:last-child {
+                border-top-left-radius: 0;
+                border-bottom-left-radius: 0;
+            }
+
+            &:first-child:last-child {
+                border-top-right-radius: @--button-border-radius;
+                border-bottom-right-radius: @--button-border-radius;
+                border-top-left-radius: @--button-border-radius;
+                border-bottom-left-radius: @--button-border-radius;
+
+                &.is-round {
+                    border-radius: 20px;
+                }
+
+                &.is-circle {
+                    border-radius: 50%;
+                }
+            }
+
+            &:not(:first-child):not(:last-child) {
+                border-radius: 0;
+            }
+
+            &:not(:last-child) {
+                margin-right: -1px;
+            }
+
+            &:hover,
+            &:focus,
+            &:active {
+                z-index: 1;
+            }
+            .active{
+                z-index: 1;
+            }
+        }
+        .loop-group-button-border-color(@data, @i: 1) when (@i =< length(@data)) {
+            @item: extract(@data, @i);
+            .pm-button--@{item} {
+                &:first-child {
+                    border-right-color: rgba(@--color-white, 0.5);
+                }
+                &:last-child {
+                    border-left-color: rgba(@--color-white, 0.5);
+                }
+                &:not(:first-child):not(:last-child) {
+                    border-left-color: rgba(@--color-white, 0.5);
+                    border-right-color: rgba(@--color-white, 0.5);
+                }
+            }
+        }
+        @types : primary, success, warning, danger, info;
+        .loop-group-button-border-color(@types)
+    }
+
+
 }
