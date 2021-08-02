@@ -81,5 +81,5 @@ module.exports = {
             errors: false	//不显示错误
         }
     },
-    lintOnSave:false //关闭eslint检查
+    lintOnSave:process.env.NODE_ENV !== 'production' // 生产坏境 关闭eslint检查
 }

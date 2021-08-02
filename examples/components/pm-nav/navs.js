@@ -15,10 +15,6 @@ const navs = [
                 url: '',
             },
             {
-                title: '样式覆盖',
-                url: '',
-            },
-            {
                 title: '定制主题',
                 url: '',
             },

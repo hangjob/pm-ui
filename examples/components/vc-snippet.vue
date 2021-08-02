@@ -106,7 +106,7 @@ export default {
 
 .vc-snippet--code /deep/ {
     code {
-        background-color: #fff;
+        background-color: #fafafa;
         font-family: Consolas, Menlo, Courier, monospace;
         border: none;
         display: block;
@@ -118,7 +118,7 @@ export default {
     .hljs {
         padding: 0;
         margin: 0;
-        background-color: #fff;
+        background-color: #fafafa;
         border-bottom-right-radius: 5px;
         border-bottom-left-radius: 5px;
     }

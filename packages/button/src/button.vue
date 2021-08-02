@@ -28,12 +28,12 @@ import { isObject, isDefined } from '~@/utils/types'
 
 export default {
     name: 'PmButton',
-
+    // 表单 读取父组件值
     inject: {
-        elForm: {
+        pmForm: {
             default: '',
         },
-        elFormItem: {
+        pmFormItem: {
             default: '',
         },
     },
@@ -63,16 +63,16 @@ export default {
     },
 
     computed: {
-        _elFormItemSize () {
-            return (this.elFormItem || {}).elFormItemSize
+        _pmFormItemSize () {
+            return (this.pmFormItem || {}).pmFormItemSize
         },
         buttonSize () {
             return (
-                this.size || this._elFormItemSize || (this.$ELEMENT || {}).size
+                this.size || this._pmFormItemSize || (this.$PMUI || {}).size
             )
         },
         buttonDisabled () {
-            return this.disabled || (this.elForm || {}).disabled
+            return this.disabled || (this.pmForm || {}).disabled
         },
     },
     created () {

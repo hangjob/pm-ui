@@ -11,10 +11,8 @@ const { parse, compileTemplate } = require('@vue/component-compiler-utils')
 
 
 
-
 function colorblockRenderer (token, idx) {
     let { tag, type, content, children } = token;
-    console.log(token)
     if (tag) {
         if (type === 'paragraph_open' || type === 'heading_open' || type === 'blockquote_open') {
             return `<${tag}>`
@@ -76,9 +74,11 @@ module.exports = function (source) {
         render (tokens, index) {
             const token = tokens[index]
             if (token.nesting === 1) {
-                return '<div class="vc-snippet-api vc-snippet-card">'
+                return '<div class="vc-snippet-api vc-snippet-card">' +
+                    '<div class="vc-snippet--demo">' +
+                    '<div class="vc-snippet--explain">'
             }
-            return '</div>'
+            return '</div></div></div>'
         },
     })
     // 使用【markdown-it-container】插件解析【:::snippet :::】代码块为vue渲染

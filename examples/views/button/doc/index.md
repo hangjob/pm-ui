@@ -118,6 +118,24 @@
 
 :::snippet
 
+### 文字按钮
+
+没有边框和背景色的按钮
+
+```html
+
+<template>
+    <div>
+        <pm-button type="text">文字按钮</pm-button>
+        <pm-button type="text" disabled>文字按钮</pm-button>
+    </div>
+</template>
+```
+
+:::
+
+:::snippet
+
 ### 不同尺寸
 
 Button 组件提供除了默认值以外的三种尺寸，可以在不同场景下选择合适的按钮尺寸
@@ -186,6 +204,8 @@ Button 组件提供除了默认值以外的三种尺寸，可以在不同场景�
 > 防抖 创建一个 debounced（防抖动）函数，该函数会从上一次被调用后，延迟 wait 毫秒后调用 func 方法，默认200毫秒
 
 > 节流 创建一个节流函数，在 wait 秒内最多执行 func 一次的函数，默认1000毫秒
+
+**如果二者都存在，则是节流throttle**
 
 ```html
 
