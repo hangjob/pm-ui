@@ -1,4 +1,4 @@
-/build
+build/*
 /examples
 /html
 /lib
@@ -8,7 +8,9 @@
 *.sh
 node_modules
 
+iconfont.*
 *.md
 *.scss
 *.woff
 *.ttf
+vue.config.js

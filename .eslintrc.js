@@ -10,7 +10,6 @@ module.exports = {
         es6: true,
     },
     extends: ['plugin:vue/essential', 'eslint:recommended'],
-
     rules: {
         // 缩进 4 空格
         indent: [2, 4],
@@ -56,5 +55,11 @@ module.exports = {
 
         // 要求操作符周围有空格
         'space-infix-ops': 1,
+
+        //数组中不允许出现空位置
+        'no-sparse-arrays': 2,
+
+        // 不允许有声明后未使用的变量或者参数
+        'no-unused-vars': 2,
     },
 }

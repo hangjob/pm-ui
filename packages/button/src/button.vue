@@ -25,7 +25,7 @@
 <script>
 import { throttle, debounce } from 'lodash'
 import { isDefined } from '~@/utils/types'
-
+const abc = [1,,2,3,]
 export default {
     name: 'PmButton',
     // 表单 读取父组件值
@@ -53,9 +53,9 @@ export default {
             default: 'button',
         },
         loading: Boolean,
-         disabled: Boolean,
-         plain: Boolean,
-         autofocus: Boolean,
+        disabled: Boolean,
+        plain: Boolean,
+        autofocus: Boolean,
         round: Boolean,
         circle: Boolean,
         debounce: [Boolean, Object],

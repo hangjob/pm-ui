@@ -1,6 +1,6 @@
 const gulp = require('gulp')
-const less = require('gulp-less')  //采用less的默认方式处理less产出css
-const concat = require('gulp-concat')  //拼接成一个文件，并命名为style.css
+const less = require('gulp-less') //采用less的默认方式处理less产出css
+const concat = require('gulp-concat') //拼接成一个文件，并命名为style.css
 const rename = require('gulp-rename') //重命名为style.min.css
 const sourcemaps = require('gulp-sourcemaps')
 const replace = require('gulp-replace')
@@ -30,7 +30,7 @@ gulp.task('pxToRem', function () {
 // 重新命名 - 为index
 gulp.task('renameIndex', function () {
     return gulp.src('./lib/*.js').pipe(rename(function (path) {
-        if(path.basename === 'pming-ui.umd.min'){
+        if (path.basename === 'pming-ui.umd.min'){
             path.basename = 'index.min'
         }
     })).pipe(gulp.dest('./lib'))
