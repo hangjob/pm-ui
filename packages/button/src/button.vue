@@ -54,7 +54,7 @@ export default {
         },
         loading: Boolean,
          disabled: Boolean,
-        plain: Boolean,
+         plain: Boolean,
         autofocus: Boolean,
         round: Boolean,
         circle: Boolean,
