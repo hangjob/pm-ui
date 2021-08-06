@@ -44,7 +44,7 @@ export default {
             default: 'default',
         },
         size: String,
-         icon: {
+        icon: {
             type: String,
             default: '',
         },
@@ -53,7 +53,7 @@ export default {
             default: 'button',
         },
         loading: Boolean,
-        disabled: Boolean,
+         disabled: Boolean,
         plain: Boolean,
         autofocus: Boolean,
         round: Boolean,
