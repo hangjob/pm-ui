@@ -55,7 +55,7 @@ export default {
         loading: Boolean,
          disabled: Boolean,
          plain: Boolean,
-        autofocus: Boolean,
+         autofocus: Boolean,
         round: Boolean,
         circle: Boolean,
         debounce: [Boolean, Object],
