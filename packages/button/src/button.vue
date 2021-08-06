@@ -24,7 +24,7 @@
 </template>
 <script>
 import { throttle, debounce } from 'lodash'
-import { isObject, isDefined } from '~@/utils/types'
+import { isDefined } from '~@/utils/types'
 
 export default {
     name: 'PmButton',
@@ -39,7 +39,7 @@ export default {
     },
 
     props: {
-        type: {
+         type: {
             type: String,
             default: 'default',
         },
