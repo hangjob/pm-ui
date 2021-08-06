@@ -39,12 +39,12 @@ export default {
     },
 
     props: {
-         type: {
+        type: {
             type: String,
             default: 'default',
         },
         size: String,
-        icon: {
+         icon: {
             type: String,
             default: '',
         },
