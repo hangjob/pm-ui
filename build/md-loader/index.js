@@ -9,8 +9,6 @@ const { parse, compileTemplate } = require('@vue/component-compiler-utils')
  * 【https://blog.nowcoder.net/n/7260be9dfee446a3a9191c1ba06985ea】
  * */
 
-
-
 function colorblockRenderer (token, idx) {
     let { tag, type, content, children } = token;
     if (tag) {

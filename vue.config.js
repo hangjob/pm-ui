@@ -78,7 +78,7 @@ module.exports = {
     devServer: {
         overlay: {
             warnings: false, //不显示警告
-            errors: false	//不显示错误
+            errors: true	// 显示错误，并在浏览器中
         }
     },
     lintOnSave:process.env.NODE_ENV !== 'production' // 生产坏境 关闭eslint检查

@@ -37,17 +37,15 @@ export default {
         let style = {}
 
         if (this.gutter) {
-            style.paddingLeft = this.gutter / 2 + 'px';
-            style.paddingRight = style.paddingLeft;
+            style.paddingLeft = this.gutter / 2 + 'px'
+            style.paddingRight = style.paddingLeft
         }
 
         ['span', 'offset', 'pull', 'push'].forEach(prop => {
             if (this[prop] || this[prop] === 0) {
-                classlist.push(
-                    prop !== 'span'
-                        ? `pm-col-${prop}-${this[prop]}`
-                        : `pm-col-${this[prop]}`,
-                )
+                classlist.push(prop !== 'span'
+                    ? `pm-col-${prop}-${this[prop]}`
+                    : `pm-col-${this[prop]}`)
             }
         });
 
