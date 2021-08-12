@@ -33,7 +33,7 @@ export default {
         pmForm: {
             default: '',
         },
-        pmFormItem: {
+         pmFormItem: {
             default: '',
         },
     },

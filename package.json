@@ -24,22 +24,15 @@
         "lint:css": "stylelint packages/**/*.{css,sass,scss,less}",
         "lib": "vue-cli-service build --target lib --dest lib packages/index.js && gulp style",
         "style": "gulp style",
-        "precommit": "lint-staged"
+        "eslint": "eslint --ext .js,.vue src",
+        "eslintfix": "eslint --fix --ext .js,.vue src",
+        "lint-staged": "lint-staged"
     },
     "husky": {
-        "hooks": {
-            "pre-commit": "lint-staged"
-        }
+        "hooks": { "pre-commit": "npm run lint-staged" }
     },
     "lint-staged": {
-        "*.js": [
-            "npm lint",
-            "git add"
-        ],
-        "*.vue": [
-            "npm lint",
-            "git add"
-        ]
+        "**/*.{js,vue}": [ "npm run eslint" ]
     },
     "dependencies": {
         "axios": "^0.20.0",
