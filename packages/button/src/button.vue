@@ -66,13 +66,13 @@ export default {
         _pmFormItemSize () {
             return (this.pmFormItem || {}).pmFormItemSize
         },
-        buttonSize () {
+      buttonSize () {
             return (
                 this.size || this._pmFormItemSize || (this.$PMUI || {}).size
             )
         },
-        buttonDisabled () {
-            return this.disabled || (this.pmForm || {}).disabled
+         buttonDisabled () {
+             return this.disabled || (this.pmForm || {}).disabled
         },
     },
     created () {

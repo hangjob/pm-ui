@@ -3,10 +3,10 @@
 </template>
 <script>
 export default {
-      data  () {
+         data  () {
           return {
           dd: '1',
-        }
+            }
     },
 }
 </script>
