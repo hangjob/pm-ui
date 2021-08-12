@@ -33,13 +33,13 @@ export default {
         pmForm: {
             default: '',
         },
-         pmFormItem: {
+        pmFormItem: {
             default: '',
         },
     },
 
     props: {
-        type: {
+          type: {
             type: String,
             default: 'default',
         },

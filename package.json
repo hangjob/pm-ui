@@ -24,8 +24,8 @@
         "lint:css": "stylelint packages/**/*.{css,sass,scss,less}",
         "lib": "vue-cli-service build --target lib --dest lib packages/index.js && gulp style",
         "style": "gulp style",
-        "eslint": "eslint --ext .js,.vue src",
-        "eslintfix": "eslint --fix --ext .js,.vue src",
+        "eslint": "eslint --ext .js,.vue packages",
+        "eslintfix": "eslint --fix --ext .js,.vue packages",
         "lint-staged": "lint-staged"
     },
     "husky": {
