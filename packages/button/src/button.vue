@@ -25,7 +25,7 @@
 <script>
 import { throttle, debounce } from 'lodash'
 import { isDefined } from '~@/utils/types'
-const abc = [1,,2,3,]
+
 export default {
     name: 'PmButton',
     // 表单 读取父组件值
