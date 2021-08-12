@@ -21,8 +21,8 @@ const install = function (Vue, opts = {}) {
     // 配置组件参数
     Vue.prototype.$PMUI = {
         size: opts.size || '', // 组件默认大小
-        zIndex: opts.zIndex || 2000 // 弹窗层级
-    };
+       zIndex: opts.zIndex || 2000 // 弹窗层级
+     };
 }
 
 // 判断是否是直接引入文件
