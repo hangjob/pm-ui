@@ -10,10 +10,12 @@
 
 // 清除浮动
 .utils-clearfix() {
-    &::before, &::after {
+    &::before,
+    &::after {
         display: table;
         content: '';
     }
+
     &::after {
         clear: both;
     }

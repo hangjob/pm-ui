@@ -10,7 +10,6 @@ node_modules
 
 iconfont.*
 *.md
-*.scss
 *.woff
 *.ttf
 vue.config.js

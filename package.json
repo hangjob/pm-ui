@@ -21,8 +21,8 @@
         "serve": "vue-cli-service serve",
         "build": "vue-cli-service build",
         "lint": "vue-cli-service lint",
-        "lint:css": "stylelint packages/**/*.{css,sass,scss,less}",
-        "lib": "vue-cli-service build --target lib --dest lib packages/index.js && gulp style",
+        "eslint:css": "stylelint **/*.{html,vue,css,sass,scss,less}",
+        "lib": "npm run eslint && vue-cli-service build --target lib --dest lib packages/index.js && gulp style",
         "style": "gulp style",
         "eslint": "eslint --ext .js,.vue,.json,.jsx packages",
         "eslintfix": "eslint --fix --ext .js,.vue packages",
@@ -30,13 +30,12 @@
     },
     "husky": {
         "hooks": {
-            "pre-commit": "npm run eslint"
+            "pre-commit": "npm run lint-staged"
         }
     },
     "lint-staged": {
-        "**/*.{js,jsx,vue}": [
-            "eslint --ext .vue,.js,.jsx --fix ./packages",
-            "git add"
+        "*.{js,ts,vue}": [
+            "npm run eslint"
         ]
     },
     "dependencies": {
@@ -75,6 +74,7 @@
         "lint-staged": "^10.0.0",
         "markdown-it": "^10.0.0",
         "markdown-it-container": "^2.0.0",
+        "prettier": "^2.3.2",
         "stylelint": "^13.13.1",
         "stylelint-config-standard": "^22.0.0",
         "uglifyjs-webpack-plugin": "^2.2.0",
@@ -91,11 +91,5 @@
     "router": true,
     "routerHistoryMode": true,
     "vuex": false,
-    "cssPreprocessor": "less",
-    "plugins": {
-        "@vue/cli-plugin-babel": {},
-        "@ziyi2/vue-cli-plugin-ui-base": {},
-        "@ziyi2/vue-cli-plugin-ui-cz": {},
-        "@ziyi2/vue-cli-plugin-ui-lint": {}
-    }
+    "cssPreprocessor": "less"
 }

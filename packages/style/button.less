@@ -10,7 +10,6 @@
     }
 }
 
-
 .button-variant(@color, @background-color, @border-color) {
     color: @color;
     background-color: @background-color;
@@ -83,7 +82,6 @@
     }
 }
 
-
 .pm-button {
     display: inline-block;
     line-height: 1;
@@ -100,17 +98,18 @@
     transition: 0.1s;
     font-weight: @--button-font-weight;
 
-    & + & {
-        margin-left: 10px;
+    &::-moz-focus-inner {
+        border: 0;
     }
 
     .utils-user-select(none);
-    .button-size(
-            @--button-padding-vertical,
-            @--button-padding-horizontal,
-            @--button-font-size,
-            @--button-border-radius
-    );
+    .button-size(@--button-padding-vertical, @--button-padding-horizontal, @--button-font-size, @--button-border-radius);
+
+    &:active {
+        color: mix(@--color-black, @--color-primary, @--button-active-shade-percent);
+        border-color: mix(@--color-black, @--color-primary, @--button-active-shade-percent);
+        outline: none;
+    }
 
     &:hover,
     &:focus {
@@ -119,26 +118,15 @@
         background-color: @--color-primary-light-9;
     }
 
-    &:active {
-        color: mix(@--color-black,
-        @--color-primary,
-        @--button-active-shade-percent);
-        border-color: mix(@--color-black,
-        @--color-primary,
-        @--button-active-shade-percent);
-        outline: none;
-    }
-
-    &::-moz-focus-inner {
-        border: 0;
-    }
-
     & [class*="pm-icon-"] {
         & + span {
             margin-left: 5px;
         }
     }
 
+    & + & {
+        margin-left: 10px;
+    }
 
     &.is-disabled {
         &,
@@ -195,10 +183,10 @@
 
     &--medium {
         .button-size(
-                @--button-medium-padding-vertical,
-                @--button-medium-padding-horizontal,
-                @--button-medium-font-size,
-                @--button-medium-border-radius
+            @--button-medium-padding-vertical,
+            @--button-medium-padding-horizontal,
+            @--button-medium-font-size,
+            @--button-medium-border-radius
         );
 
         &.is-circle {
@@ -207,12 +195,7 @@
     }
 
     &--small {
-        .button-size(
-                @--button-small-padding-vertical,
-                @--button-small-padding-horizontal,
-                @--button-small-font-size,
-                @--button-small-border-radius
-        );
+        .button-size(@--button-small-padding-vertical, @--button-small-padding-horizontal, @--button-small-font-size, @--button-small-border-radius);
 
         &.is-circle {
             padding: @--button-small-padding-vertical;
@@ -220,12 +203,7 @@
     }
 
     &--mini {
-        .button-size(
-                @--button-mini-padding-vertical,
-                @--button-mini-padding-horizontal,
-                @--button-mini-font-size,
-                @--button-mini-border-radius
-        );
+        .button-size(@--button-mini-padding-vertical, @--button-mini-padding-horizontal, @--button-mini-font-size, @--button-mini-border-radius);
 
         &.is-circle {
             padding: @--button-mini-padding-vertical;
@@ -233,46 +211,26 @@
     }
 
     &--primary {
-        .button-variant(
-                @--button-primary-font-color,
-                @--button-primary-background-color,
-                @--button-primary-border-color
-        );
+        .button-variant(@--button-primary-font-color, @--button-primary-background-color, @--button-primary-border-color);
     }
 
     &--success {
-        .button-variant(
-                @--button-success-font-color,
-                @--button-success-background-color,
-                @--button-success-border-color
-        );
+        .button-variant(@--button-success-font-color, @--button-success-background-color, @--button-success-border-color);
     }
 
     &--info {
-        .button-variant(
-                @--button-info-font-color,
-                @--button-info-background-color,
-                @--button-info-border-color
-        );
+        .button-variant(@--button-info-font-color, @--button-info-background-color, @--button-info-border-color);
     }
 
     &--warning {
-        .button-variant(
-                @--button-warning-font-color,
-                @--button-warning-background-color,
-                @--button-warning-border-color
-        );
+        .button-variant(@--button-warning-font-color, @--button-warning-background-color, @--button-warning-border-color);
     }
 
     &--danger {
-        .button-variant(
-                @--button-danger-font-color,
-                @--button-danger-background-color,
-                @--button-danger-border-color
-        );
+        .button-variant(@--button-danger-font-color, @--button-danger-background-color, @--button-danger-border-color);
     }
 
-    &--text{
+    &--text {
         border-color: transparent;
         color: @--color-primary;
         background: transparent;
@@ -285,6 +243,7 @@
             border-color: transparent;
             background-color: transparent;
         }
+
         &:active {
             color: mix(@--color-black, @--color-primary, @--button-active-shade-percent);
             border-color: transparent;
@@ -299,12 +258,14 @@
     }
 
     &-group {
-        .utils-clearfix();
-        display: inline-block;
-        vertical-align: middle;
         & + & {
             margin-left: 10px;
         }
+
+        .utils-clearfix();
+        display: inline-block;
+        vertical-align: middle;
+
         & > .pm-button {
             float: left;
             position: relative;
@@ -342,41 +303,43 @@
                 }
             }
 
-            &:not(:first-child):not(:last-child) {
-                border-radius: 0;
+            .active {
+                z-index: 1;
             }
 
             &:not(:last-child) {
                 margin-right: -1px;
             }
 
-            &:hover,
-            &:focus,
-            &:active {
-                z-index: 1;
+            &:not(:first-child):not(:last-child) {
+                border-radius: 0;
             }
-            .active{
+
+            &:hover,
+            &:active,
+            &:focus {
                 z-index: 1;
             }
         }
+
         .loop-group-button-border-color(@data, @i: 1) when (@i =< length(@data)) {
             @item: extract(@data, @i);
             .pm-button--@{item} {
                 &:first-child {
                     border-right-color: rgba(@--color-white, 0.5);
                 }
+
                 &:last-child {
                     border-left-color: rgba(@--color-white, 0.5);
                 }
+
                 &:not(:first-child):not(:last-child) {
                     border-left-color: rgba(@--color-white, 0.5);
                     border-right-color: rgba(@--color-white, 0.5);
                 }
             }
         }
-        @types : primary, success, warning, danger, info;
-        .loop-group-button-border-color(@types)
+        @types: primary, success, warning, danger, info;
+        .loop-group-button-border-color(@types);
     }
-
-
 }

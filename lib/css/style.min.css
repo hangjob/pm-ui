@@ -683,6 +683,29 @@ hr {
   background-color: #fef0f0;
   border-color: #fde2e2;
 }
+.pm-button--text {
+  border-color: transparent;
+  color: #409EFF;
+  background: transparent;
+  padding-left: 0;
+  padding-right: 0;
+}
+.pm-button--text:hover,
+.pm-button--text:focus {
+  color: #66b1ff;
+  border-color: transparent;
+  background-color: transparent;
+}
+.pm-button--text:active {
+  color: #3a8ee6;
+  border-color: transparent;
+  background-color: transparent;
+}
+.pm-button--text.is-disabled,
+.pm-button--text.is-disabled:hover,
+.pm-button--text.is-disabled:focus {
+  border-color: transparent;
+}
 .pm-button-group {
   display: inline-block;
   vertical-align: middle;

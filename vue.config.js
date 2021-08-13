@@ -72,14 +72,14 @@ module.exports = {
         config.devtool = 'source-map'
         return {
             plugins,
-            devtool:'source-map'
+            devtool: 'source-map',
         }
     },
     devServer: {
         overlay: {
             warnings: false, //不显示警告
-            errors: true	// 显示错误，并在浏览器中
-        }
+            errors: true,	// 显示错误，并在浏览器中
+        },
     },
-    lintOnSave:process.env.NODE_ENV !== 'production' // 生产坏境 关闭eslint检查
+    lintOnSave: process.env.NODE_ENV !== 'production', // 生产坏境 关闭eslint检查
 }

@@ -20,12 +20,10 @@
 
     &--flex {
         display: flex;
-
-        &:before,
-        &:after {
+        &::before,
+        &::after {
             display: none;
         }
-
         .flex-justify-content(justify-center, center);
         .flex-justify-content(justify-end, flex-end);
         .flex-justify-content(justify-space-between, space-between);

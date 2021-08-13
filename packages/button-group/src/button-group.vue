@@ -9,7 +9,3 @@ export default {
     name: 'PmButtonGroup',
 }
 </script>
-
-<style scoped>
-
-</style>
