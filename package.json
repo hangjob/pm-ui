@@ -22,7 +22,7 @@
         "build": "vue-cli-service build",
         "lint": "vue-cli-service lint",
         "eslint:css": "stylelint **/*.{html,vue,css,sass,scss,less}",
-        "lib": "npm run eslint && vue-cli-service build --target lib --dest lib packages/index.js && gulp style",
+        "lib": "npm run eslint && npm run eslint:css && vue-cli-service build --target lib --dest lib packages/index.js && gulp style",
         "style": "gulp style",
         "eslint": "eslint --ext .js,.vue,.json,.jsx packages",
         "eslintfix": "eslint --fix --ext .js,.vue packages",

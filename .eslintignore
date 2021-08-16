@@ -1,7 +1,7 @@
 /build
 /examples
 /html
-/lib
+/lib/*
 /public
 /src
 /test
