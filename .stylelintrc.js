@@ -1,3 +1,4 @@
+//
 module.exports = {
     defaultSeverity: 'error',
     extends: ['stylelint-config-standard'], // 官方推荐
@@ -6,23 +7,13 @@ module.exports = {
         'declaration-block-semicolon-newline-after': 'always',
         'function-url-quotes': 'always',
         'number-leading-zero': null,
-        'rule-empty-line-before': false,
-        'selector-pseudo-element-colon-notation': 'double',
-        'font-family-no-missing-generic-family-keyword': false,
+        'selector-pseudo-element-colon-notation': null,
+        'font-family-no-missing-generic-family-keyword': null,
+        'rule-empty-line-before': null,
         'declaration-colon-newline-after': 'always-multi-line',
         'value-list-comma-space-before': 'never',
-        'declaration-empty-line-before': [
-            'always', {
-                'ignore': ['after-comment', 'stylelint-commands'],
-            }],
-        'no-descending-specificity': false,
-        'unit-whitelist': [
-            'em',
-            'rem',
-            's',
-            '%',
-            'px',
-            'deg',
-        ],
+        'declaration-empty-line-before': null,
+        'no-descending-specificity': null,
+        'unit-allowed-list': ['em','rem','s', '%','px','deg',],
     },
 }
