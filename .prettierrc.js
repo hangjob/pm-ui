@@ -1,5 +1,5 @@
 module.exports = {
-    printWidth: 100,
+    printWidth: 100, // 每行最多多少个字符换行
     semi: false, // 在每个语句的末尾添加分号
     singleQuote: false, // 使用单引号而不是双引号
     trailingComma: 'none', // 多行时尽可能打印尾随逗号<none|es5|all>
