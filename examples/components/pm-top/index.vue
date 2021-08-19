@@ -2,7 +2,7 @@
     <div class="pm-nav">
         <div class="pm-doc-row">
             <div class="pm-doc-row-header__top">
-                <a class="pm-doc-row-header__logo" href=""><img src="@/assets/images/logo.png" alt=""><span>Pm-ui</span></a>
+                <a class="pm-doc-row-header__logo" href="/"><img src="@/assets/images/logo.png" alt=""><span>Pm-ui</span></a>
                 <ul class="pm-doc-header__top-nav">
                     <li class="pm-doc-header__top-nav-item">
                         <a class="link" target="_blank" href="https://github.com/hangjob/pm-ui"><img src="@/assets/images/github.svg" alt=""></a>
