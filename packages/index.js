@@ -31,7 +31,7 @@ if (typeof window !== 'undefined' && window.Vue) {
 }
 
 // 1.导出的对象必须具有 install，才能被 Vue.use() 方法安装
-// 2.把组件到出去，模块化安装
+// 2.把组件导出去，模块化安装
 export default {
     install,
     PmButton,

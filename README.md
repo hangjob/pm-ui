@@ -43,13 +43,14 @@ npm run lib
 ### 发布
 
 #### 第一次发包
-**发包需要注意改动懂版本号**
+**发包需要注意改动版本号**
 ```bash
 # 添加账户，没有去npm上注册
 npm adduser
 npm login
 ```
 #### 不是第一次发包
+我默认为你已经登录过
 ```bash
 npm publish
 ```

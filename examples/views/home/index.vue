@@ -10,8 +10,10 @@
         <pm-doc-card>
             <h3 class="title">介绍</h3>
             <p>
-                <strong>Pm-ui</strong>，Pm为品茗拼音首字母的缩写，<a href="https://www.pminfo.cn/"
-                                                             target="_blank">杭州品茗信息有限公司</a>前端框架UI，风格统一问题，形成品茗信息的一套企业UI规范。<br>
+                <strong>Pm-ui</strong>，Pm为品茗拼音首字母的缩写，
+                <a href="https://www.pminfo.cn/" target="_blank">杭州品茗信息有限公司</a>
+                前端框架UI，风格统一问题，形成品茗信息的一套企业UI规范。
+                <br>
                 <br>
             </p>
             <p>
@@ -25,7 +27,7 @@
             <ol>
                 <li>提炼自企业级中后台产品的交互语言和视觉风格</li>
                 <li>提供 60 多个高质量组件，覆盖移动端各类场景</li>
-                <li>单元测试覆盖率 90%+，提供稳定性保障</li>
+                <li>单元测试覆盖率 70%+，提供稳定性保障</li>
                 <li>全局引入</li>
                 <li>支持主题定制</li>
                 <li>支持按需引入</li>
@@ -58,6 +60,7 @@ export default {
 .pm-doc-intro {
     padding-top: 20px;
     text-align: center;
+
     img {
         width: 120px;
         height: 120px;
