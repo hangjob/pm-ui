@@ -10,10 +10,10 @@ import './components/index'
 import 'highlight.js/styles/atom-one-dark.css'
 import * as Sentry from '@sentry/vue'
 import { Integrations } from '@sentry/tracing'
+import Router from 'vue-router'
 
 Vue.config.productionTip = false
 Vue.use(PmUI)
-
 // 收集bug依赖
 const initSentry = () => {
     Sentry.init({
@@ -29,7 +29,6 @@ const initSentry = () => {
     })
 }
 // initSentry()
-
 new Vue({
     router,
     render: (h) => h(App),

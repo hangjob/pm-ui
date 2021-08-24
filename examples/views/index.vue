@@ -81,7 +81,7 @@ export default {
         return {
             bg: `url(${bg})`,
         }
-    },
+    }
 }
 </script>
 <style lang="less" scoped>
