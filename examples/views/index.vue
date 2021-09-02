@@ -37,9 +37,9 @@
                 <li>
                     <div class="card">
                         <i class="pm-icon-guide"></i>
-                        <h3>指南</h3>
-                        <p>了解设计指南，帮助产品设计人员搭建逻辑清晰、结构合理且高效易用的产品。</p>
-                        <a class="">查看详情</a>
+                        <h3>Pm-cli</h3>
+                        <p>一套完整的品茗前端项目脚手架，为搭建前端应用快速开发，自动生成vue.js + webpack的项目模板。</p>
+                        <a href="">查看详情</a>
                     </div>
                 </li>
                 <li>
@@ -55,15 +55,23 @@
                         <i class="pm-icon-zhuti"></i>
                         <h3>主题</h3>
                         <p>在线主题编辑器，可视化定制和管理站点主题、组件样式。</p>
-                        <a class="">查看详情</a>
+                        <a href="">查看详情</a>
                     </div>
                 </li>
                 <li>
                     <div class="card">
                         <i class="pm-icon-shengtai"></i>
                         <h3>生长</h3>
-                        <p>提出的问题能得到有效且及时的解决，帮助开发者更完善的解决技术难题。</p>
-                        <a class="">查看详情</a>
+                        <p>提出的问题能得到有效且及时的解决，帮助开发者更完善的解决技术难题，丰富品茗开发者。</p>
+                        <a href="">查看详情</a>
+                    </div>
+                </li>
+                <li>
+                    <div class="card">
+                        <i class="pm-icon-dashuju"></i>
+                        <h3>大数据</h3>
+                        <p>解决品茗前端图表数据的可视化应用，组件封装，做到开箱即用</p>
+                        <a href="/bigdata/home">查看详情</a>
                     </div>
                 </li>
             </ul>
@@ -72,16 +80,12 @@
 </template>
 <script>
 const bg = require('@/assets/images/bg.jpg')
-import PmTop from '@/components/pm-top'
 export default {
-    components:{
-        PmTop
-    },
     data () {
         return {
             bg: `url(${bg})`,
         }
-    }
+    },
 }
 </script>
 <style lang="less" scoped>
@@ -104,21 +108,25 @@ export default {
     font-size: 180px;
     color: #c2c2c2;
 }
-.site-idea{
+
+.site-idea {
     margin: 30px auto 110px;
     width: 1140px;
-    .container{
+
+    .container {
         padding: 0;
         margin: 0 -11px;
         width: auto;
         clear: none;
-        li{
+
+        li {
             width: 25%;
             padding: 0 19px;
             box-sizing: border-box;
             float: left;
             list-style: none;
-            .card{
+            margin-bottom: 30px;
+            .card {
                 width: 100%;
                 height: 350px;
                 background: #fff;
@@ -129,25 +137,29 @@ export default {
                 position: relative;
                 transition: all .3s ease-in-out;
                 padding: 25px 15px;
-                i{
+
+                i {
                     font-size: 60px;
                     margin: 20px auto 20px;
                     color: #3F5CE4;
                 }
-                h3{
+
+                h3 {
                     font-size: 18px;
                     color: #1f2f3d;
                     font-weight: 400;
                     margin-bottom: 15px;
                 }
-                p{
+
+                p {
                     font-size: 14px;
                     color: #99a9bf;
                     padding: 0 25px;
                     line-height: 20px;
                     text-align: justify;
                 }
-                a{
+
+                a {
                     height: 53px;
                     line-height: 52px;
                     font-size: 14px;
@@ -166,7 +178,8 @@ export default {
                     transition: all .3s;
                     text-decoration: none;
                     display: block;
-                    &:hover{
+
+                    &:hover {
                         color: #fff;
                         background: #409eff;
                     }
@@ -175,6 +188,7 @@ export default {
         }
     }
 }
+
 @keyframes site-zfj {
     0% {
         opacity: 1;
@@ -224,6 +238,9 @@ export default {
 .site-desc cite {
     font-size: 16px;
     color: #FFFFFF;
+    p{
+        line-height: 40px;
+    }
 }
 
 .site-download {

@@ -11,11 +11,9 @@
 </template>
 
 <script>
-import PmTop from '@/components/pm-top'
-import PmNav from '@/components/pm-nav'
+import PmNav from '@/components/nav'
 export default {
     components:{
-        PmTop,
         PmNav
     },
     name: 'index.vue',

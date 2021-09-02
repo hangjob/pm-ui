@@ -1,16 +1,15 @@
 import Vue from 'vue'
 import App from './App.vue'
-import router from './router'
+import router from '@/router'
 // 导入组件库
-import PmUI from '../packages'
-import './style/reset.less'
-import '../packages/style/index.less'
-import './style/vc-snippet.less'
-import './components/index'
+import PmUI from '../../../packages'
+import '@/style/reset.less'
+import '../../../packages/style/index.less'
+import '@/style/vc-snippet.less'
+import '@/components/index'
 import 'highlight.js/styles/atom-one-dark.css'
 import * as Sentry from '@sentry/vue'
 import { Integrations } from '@sentry/tracing'
-import Router from 'vue-router'
 
 Vue.config.productionTip = false
 Vue.use(PmUI)
