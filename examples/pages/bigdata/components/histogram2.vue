@@ -1,6 +1,6 @@
 <template>
-    <div>
-        <div id="main" ref="main" style="width: 677px;height:650px;"></div>
+    <div class="histogram">
+        <div id="main" ref="main" style="height:650px;"></div>
     </div>
 </template>
 <script>
@@ -146,12 +146,6 @@ export default {
                         },
                         label: {
                             normal: {
-                                rich: {
-                                    f: {
-                                        color: 'red',
-                                        fontSize: '22',
-                                    },
-                                },
                                 position: 'right',
                                 padding: [3, 0, 0, 10],
                                 show: true,
@@ -163,6 +157,7 @@ export default {
                     },
                 ],
             }
+            myChart.clear();
             myChart.setOption(option)
         },
     },

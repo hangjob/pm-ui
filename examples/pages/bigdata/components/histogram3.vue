@@ -1,6 +1,6 @@
 <template>
-    <div>
-        <div id="main" ref="main" style="width: 677px;height:400px;"></div>
+    <div class="histogram">
+        <div id="main" ref="main" style="height:400px;"></div>
     </div>
 </template>
 <script>
@@ -109,6 +109,7 @@ export default {
                     }],
             }
             let myChart = this.$echarts.init(this.$refs.main)
+            myChart.clear();
             myChart.setOption(option)
         },
     },

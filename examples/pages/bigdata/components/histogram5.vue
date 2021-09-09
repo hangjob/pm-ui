@@ -1,6 +1,6 @@
 <template>
-    <div>
-        <div id="main" ref="main" style="width:1200px;height:400px;"></div>
+    <div class="histogram">
+        <div id="main" ref="main" style="width:100%;height:400px;"></div>
     </div>
 </template>
 <script>
@@ -37,8 +37,8 @@ export default {
                     itemWidth: 15,
                     itemHeight: 10,
                     itemGap: 25,
-                    selectedMode:false,
-                    data:[
+                    selectedMode: false,
+                    data: [
                         {
                             itemWidth: 15,
                             itemHeight: 10,
@@ -46,7 +46,7 @@ export default {
                             icon: 'roundRect',
                             textStyle: {
                                 color: '#000000',
-                                padding: [0,3,0,3],
+                                padding: [0, 3, 0, 3],
                             },
                             lineStyle: {
                                 color: '#000000',
@@ -58,46 +58,46 @@ export default {
                         {
                             name: '预算价',
                             lineStyle: {
-                                width:1,
+                                width: 1,
                                 color: '#00DEFF',
                             },
                             textStyle: {
                                 color: '#000000',
-                                padding: [0,3,0,3],
+                                padding: [0, 3, 0, 3],
                             },
                             itemStyle: {
                                 color: '#00DEFF',
-                            }
+                            },
                         },
                         {
                             name: '节约额',
                             lineStyle: {
-                                width:1,
+                                width: 1,
                                 color: '#0BCD76',
                             },
                             textStyle: {
                                 color: '#000000',
-                                padding: [0,3,0,3],
+                                padding: [0, 3, 0, 3],
                             },
                             itemStyle: {
                                 color: '#0BCD76',
-                            }
+                            },
                         },
                         {
                             name: '交易量',
                             lineStyle: {
-                                width:1,
+                                width: 1,
                                 color: '#EE8931',
                             },
                             textStyle: {
                                 color: '#000000',
-                                padding: [0,3,0,3],
+                                padding: [0, 3, 0, 3],
                             },
                             itemStyle: {
                                 color: '#EE8931',
                             },
                         },
-                    ]
+                    ],
                 },
                 xAxis: {
                     type: 'category',
@@ -300,6 +300,7 @@ export default {
                 ],
             }
             let myChart = this.$echarts.init(this.$refs.main)
+            myChart.clear();
             myChart.setOption(option)
         },
     },

@@ -1,35 +1,39 @@
 <template>
     <div class="home">
-        <biddata-card>
-            <histogram1/>
-        </biddata-card>
-        <biddata-card>
-            <histogram2/>
-        </biddata-card>
-        <biddata-card>
-            <histogram3/>
-        </biddata-card>
-        <biddata-card>
-            <histogram4/>
-        </biddata-card>
-        <biddata-card>
-            <histogram5/>
-        </biddata-card>
-        <biddata-card>
-            <histogram6/>
-        </biddata-card>
+        <template v-for="(item,index) in items">
+            <biddata-card :key="index">
+                <component :is="item.name"></component>
+            </biddata-card>
+        </template>
     </div>
 </template>
 <script>
 export default {
+    data () {
+        return {
+            items: [
+                { name: 'histogram1' }, { name: 'histogram2' }, { name: 'histogram3' },
+                { name: 'histogram4' }, { name: 'histogram5' }, { name: 'histogram6' },
+                { name: 'histogram7' },
+            ],
+        }
+    },
     created () {
-        console.log(this.$g2)
-        console.log(this.$echarts)
-    }
+
+    },
+    methods: {
+    },
 }
 </script>
+<style>
+.histogram{
+    width: 100%;
+}
+</style>
 <style scoped lang="less">
-.home{
-
+.home {
+    column-count: 2;
+    column-gap: 0;
+    counter-reset: item-counter;
 }
 </style>

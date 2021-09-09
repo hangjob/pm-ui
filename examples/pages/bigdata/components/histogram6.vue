@@ -1,6 +1,6 @@
 <template>
-    <div>
-        <div id="main" ref="main" style="width:1200px;height:400px;"></div>
+    <div class="histogram">
+        <div id="main" ref="main" style="height:400px;"></div>
     </div>
 </template>
 <script>
@@ -39,21 +39,9 @@ export default {
                             show: false,
                         },
                         axisLabel: {
-                            color: '#fff',
+                            color: '#333333',
                             formatter: function (value, index) {
-                                return [
-                                    '{lg|' + (index + 1) + '}' + '{title|' + value + '} ',
-                                ].join('\n')
-                            },
-                            rich: {
-                                lg: {
-                                    backgroundColor: '#339911',
-                                    color: '#fff',
-                                    borderRadius: 15,
-                                    align: 'center',
-                                    width: 15,
-                                    height: 15,
-                                },
+                                return value
                             },
                         },
 
@@ -85,21 +73,21 @@ export default {
                         yAxisIndex: 0,
                         data: data,
                         barWidth: 14,
+                        z: 10,
                         itemStyle: {
                             normal: {
-                                left: '10%',
+                                distance: 10,
                                 barBorderRadius: 14,
                                 color: function (params) {
-                                    var num = myColor.length
+                                    let num = myColor.length
                                     return myColor[params.dataIndex % num]
                                 },
                             },
                         },
                         label: {
                             normal: {
+                                position: 'right',
                                 show: true,
-                                position: 'inside',
-                                formatter: '{c}%',
                             },
                         },
                     },
@@ -108,7 +96,7 @@ export default {
                         type: 'bar',
                         yAxisIndex: 1,
                         barGap: '-100%',
-                        startAngle:10,
+                        startAngle: 10,
                         data: [100, 100, 100],
                         barWidth: 22,
                         itemStyle: {
@@ -119,10 +107,11 @@ export default {
                                 barBorderRadius: 22,
                             },
                         },
-                    },
+                    }
                 ],
             }
             let myChart = this.$echarts.init(this.$refs.main)
+            myChart.clear();
             myChart.setOption(option)
         },
     },

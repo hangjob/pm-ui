@@ -9,7 +9,8 @@ import '../../../packages/style/index.less'
 // 导入插件
 import './plugins/g2'
 import './plugins/echarts'
-
+import VirtualCollection from 'vue-virtual-collection'
+Vue.use(VirtualCollection)
 Vue.use(PmUI)
 // 基础配置
 import '@/style/reset.less'
