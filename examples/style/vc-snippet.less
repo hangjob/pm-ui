@@ -1,6 +1,18 @@
 .vc-snippet-doc {
     margin-bottom: 50px;
 
+    blockquote {
+        padding: 15px 20px;
+        margin: 20px 0;
+        border-left: 3px solid #59c4a6;
+        background-color: #ffffff;
+        border-radius: 2px;
+
+        p {
+            margin: 0;
+        }
+    }
+
     .vc-snippet-card {
         position: relative;
         box-sizing: border-box;
@@ -27,7 +39,6 @@
 
         h3 {
             margin-bottom: 16px;
-            font-weight: 600;
             font-size: 19px;
         }
 
@@ -93,6 +104,7 @@
                 border-radius: 50%;
                 content: '';
             }
+
         }
 
         .vc-snippet--demo {
@@ -103,18 +115,45 @@
             font-size: 12px;
 
             .vc-snippet--explain {
+                h1 {
+                    margin-top: 0;
+                    margin-bottom: 10px;
+                }
+
+                h2 {
+                    margin-top: 0;
+                    margin-bottom: 10px;
+                }
+
+                ul, ol {
+                    padding: 0 18px;
+                    margin-bottom: 15px;
+
+                    li {
+                        position: relative;
+                        margin: 5px 0 5px 5px;
+                        color: #34495e;
+                        font-size: 15px;
+                        line-height: 26px;
+                    }
+                }
+
+                ul {
+                    list-style: initial;
+                }
+
+                ol {
+                    list-style: auto;
+                }
 
                 blockquote {
-                    padding: 15px 20px;
-                    margin: 20px 0;
-                    border-left: 3px solid #59c4a6;
                     background-color: #f3f5f7;
-                    border-radius: 2px;
 
                     p {
                         margin: 0;
                     }
                 }
+
                 > table {
                     width: 100%;
                     margin-top: 12px;
@@ -179,6 +218,12 @@
 
     .hljs {
         background: none;
+
+        &:last-child {
+            code {
+                margin-bottom: 0;
+            }
+        }
     }
 
     code.code {
@@ -190,5 +235,6 @@
         border-radius: 4px;
         display: block;
         font-family: Menlo, Monaco, Consolas, Courier, monospace;
+        margin-bottom: 15px;
     }
 }

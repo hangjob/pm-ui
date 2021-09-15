@@ -5,19 +5,19 @@
                 <a class="pm-doc-row-header__logo" href="/"><img src="@/assets/images/logo.png" alt=""><span>Pm-ui</span></a>
                 <ul class="pm-doc-header__top-nav">
                     <li class="pm-doc-header__top-nav-item">
-                        <a class="link" target="_blank" href="">脚手架</a>
+                        <a class="link" href="/cli/home">脚手架</a>
                     </li>
                     <li class="pm-doc-header__top-nav-item">
-                        <a class="link" target="_blank" href="">组件</a>
+                        <a class="link" href="/home">组件</a>
                     </li>
                     <li class="pm-doc-header__top-nav-item">
-                        <a class="link" target="_blank" href="">主题</a>
+                        <a class="link" href="">主题</a>
                     </li>
                     <li class="pm-doc-header__top-nav-item">
-                        <a class="link" target="_blank" href="">生长</a>
+                        <a class="link" href="">生长</a>
                     </li>
                     <li class="pm-doc-header__top-nav-item">
-                        <a class="link" target="_blank" href="">大数据</a>
+                        <a class="link" href="/bigdata/home">大数据</a>
                     </li>
                     <li class="pm-doc-header__top-nav-item">
                         <a class="link" target="_blank" href="https://github.com/hangjob/pm-ui"><img src="@/assets/images/github.svg" alt=""></a>

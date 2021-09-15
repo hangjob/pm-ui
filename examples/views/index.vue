@@ -39,7 +39,7 @@
                         <i class="pm-icon-guide"></i>
                         <h3>Pm-cli</h3>
                         <p>一套完整的品茗前端项目脚手架，为搭建前端应用快速开发，自动生成vue.js + webpack的项目模板。</p>
-                        <a href="">查看详情</a>
+                        <a href="/cli/home">查看详情</a>
                     </div>
                 </li>
                 <li>

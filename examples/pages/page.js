@@ -7,6 +7,10 @@ const multiple = {
         entry: 'examples/pages/bigdata',
         chunks: ['bigdata'],
     },
+    cli: {
+        entry: 'examples/pages/cli',
+        chunks: ['cli'],
+    },
 }
 
 const entry = {}

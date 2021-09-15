@@ -67,3 +67,6 @@ npm publish
 [测试断言说明-1](https://www.jianshu.com/p/c1b5676c1edd)
 
 [测试断言说明-2](https://blog.csdn.net/Riona_cheng/article/details/101444964)
+
+### 使用表情
+🌏 [Emoji](https://cn.piliapp.com/emoji/list/)

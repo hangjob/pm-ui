@@ -10,12 +10,15 @@ const { parse, compileTemplate } = require('@vue/component-compiler-utils')
  * */
 
 function colorblockRenderer (token, idx) {
-    let { tag, type, content, children } = token;
+    let { tag, type, content, children } = token
     if (tag) {
-        if (type === 'paragraph_open' || type === 'heading_open' || type === 'blockquote_open') {
+        // 特定标签处理
+        let opens = ['paragraph_open', 'heading_open', 'blockquote_open']
+        let close = ['paragraph_close', 'heading_close', 'blockquote_close']
+        if (opens.indexOf(type) != -1) {
             return `<${tag}>`
         }
-        if (type === 'paragraph_close' || type === 'heading_close' || type === 'blockquote_close') {
+        if (close.indexOf(type) != -1) {
             return `</${tag}>`
         }
         if (type === 'code_inline') {
@@ -23,7 +26,8 @@ function colorblockRenderer (token, idx) {
         }
     }
     else {
-        if (type === 'inline' || type === 'html_block' || type === 'text') {
+        let arrs = ['inline', 'html_block', 'text']
+        if (arrs.indexOf(type) != -1) {
             if (children && children.length) {
                 let lnlineHtml = ''
                 for (let i = 0, len = children.length; i < len; i++) {
@@ -79,7 +83,7 @@ module.exports = function (source) {
             return '</div></div></div>'
         },
     })
-    // 使用【markdown-it-container】插件解析【:::snippet :::】代码块为vue渲染
+    // 插件解析【:::snippet :::】代码块为vue渲染
     markdownIt.use(MarkdownItContainer, 'snippet', {
         // 验证代码块为【:::snippet :::】才进行渲染
         validate (params) {
@@ -152,13 +156,14 @@ module.exports = function (source) {
                     ${script}
                     return {
                     ...exportJavaScript,
-                    ${templateCodeRender ? 'render,' : ''} 
-                    ${templateCodeRender ? 'staticRenderFns,' : ''}   
+                    ${templateCodeRender ? 'render,' : ''}
+                    ${templateCodeRender ? 'staticRenderFns,' : ''}
                 }
                 })()`)
 
                 // 解决模板变量报错
-                markdownIt.renderer.rules.fence = genInlineLabel(markdownIt.renderer.rules.fence);
+                markdownIt.renderer.rules.fence = genInlineLabel(
+                    markdownIt.renderer.rules.fence)
 
                 // 将需要渲染的示例用vc-snippet组件包裹替换插槽显示示例效果
                 return `<vc-snippet>
@@ -170,13 +175,15 @@ module.exports = function (source) {
             return `</div></vc-snippet> `
         },
     })
+
     function genInlineLabel (render) {
-        return function() {
-            return render.apply(this, arguments)
-            .replace('{{', '{ { ')
-            .replace('}}', ' } }');
-        };
+        return function () {
+            return render.apply(this, arguments).
+                replace('{{', '{ { ').
+                replace('}}', ' } }')
+        }
     }
+
     // 将所有转换好的代码字符串拼接成vue单组件template、script、style格式
     return `
         <template>
