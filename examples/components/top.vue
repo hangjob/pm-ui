@@ -71,7 +71,7 @@ export default {
                 .pm-doc-header__top-nav-item {
                     position: relative;
                     display: inline-block;
-                    margin-left: 60px;
+                    margin-left: 30px;
                     vertical-align: top;
                     height: 60px;
                     .link {
@@ -80,6 +80,8 @@ export default {
                         display: inline-block;
                         vertical-align: top;
                         text-decoration: none;
+                        min-width: 80px;
+                        text-align: center;
                         img {
                             display: inline-block;
                             width: 26px;

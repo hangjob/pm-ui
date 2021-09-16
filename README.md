@@ -57,7 +57,7 @@ npm adduser
 npm login
 ```
 #### 不是第一次发包
-我默认为你已经登录过
+默认为你已经登录过
 ```bash
 npm publish
 ```
