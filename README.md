@@ -70,3 +70,13 @@ npm publish
 
 ### 使用表情
 🌏 [Emoji](https://cn.piliapp.com/emoji/list/)
+
+### -apple-system 
+```html
+<style>
+font-family:-apple-system,BlinkMacSystemFont,Helvetica Neue,PingFang SC,Microsoft YaHei,Source Han Sans SC,Noto Sans CJK SC,WenQuanYi Micro Hei,sans-serif;
+</style>
+```
+-apple-system 是在以 WebKit 为内核的浏览器（如 Safari）中，调用 Apple（苹果公司）系统（iOS, macOS, watchOS, tvOS）中默认字体（现在一般情况下，英文是 San Francisco，中文是苹方
+
+BlinkMacSystemFont 是在 Chrome 中实现调用 Apple 的系统字体
