@@ -43,8 +43,8 @@
             <p>代码贡献之前，务必阅读过<a href="https://www.chiark.greenend.org.uk/~sgtatham/bugs-cn.html" target="_blank">如何有效地报告
                 Bug</a>、<a href="https://github.com/seajs/seajs/issues/545">如何向开源社区提问题</a>、<a
                 href="https://zhuanlan.zhihu.com/p/25795393">如何向开源项目提交无法解答的问题</a></p>
-            <p>使用过程中发现任何问题都可以提 <a href="https://github.com/hangjob/pm-ui" target="_blank">Issue</a> 给我们，当然，也可以<a
-                href="https://www.vipbic.com/" target="_blank">@我</a></p>
+            <p>使用过程中发现任何问题都可以提 <a href="http://192.168.1.200/secrets/pm-ui/issues" target="_blank">Issue</a> 给我们，当然，也可以<a
+                href="javascript:;" target="_blank">@品茗前端</a></p>
         </pm-doc-card>
     </div>
 </template>

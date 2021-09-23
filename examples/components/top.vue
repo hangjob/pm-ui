@@ -17,7 +17,7 @@
                         <a class="link" href="//127.0.0.1:7001" target="_blank">生长</a>
                     </li>
                     <li class="pm-doc-header__top-nav-item">
-                        <a class="link" target="_blank" href="https://github.com/hangjob/pm-ui"><img src="@/assets/images/github.svg" alt=""></a>
+                        <a class="link" target="_blank" href="http://192.168.1.200/secrets/pm-ui"><img src="@/assets/images/github.svg" alt=""></a>
                     </li>
                 </ul>
             </div>

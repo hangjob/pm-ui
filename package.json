@@ -6,11 +6,11 @@
     "main": "lib/index.js",
     "author": {
         "name": "yanghang",
-        "email": "470193837@qq.com"
+        "email": "yanghang@pminfo.cn"
     },
     "bugs": {
-        "url": "https://github.com/hangjob/pm-ui/issues",
-        "email": "470193837@qq.com"
+        "url": "http://192.168.1.200/secrets/pm-ui/issues",
+        "email": "yanghang@pminfo.cn"
     },
     "keywords": [
         "vue",
@@ -18,7 +18,7 @@
     ],
     "repository": {
         "type": "git",
-        "url": "https://github.com/hangjob/pm-ui"
+        "url": "http://192.168.1.200/secrets/pm-ui"
     },
     "license": "MIT",
     "scripts": {
