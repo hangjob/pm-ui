@@ -38,7 +38,7 @@
                     <div class="card">
                         <i class="pm-icon-guide"></i>
                         <h3>Pm-cli</h3>
-                        <p>一套完整的品茗前端项目脚手架，为搭建前端应用快速开发，自动生成vue.js + webpack的项目模板。</p>
+                        <p>一套完整的品茗前端项目脚手架，为搭建前端应用快速开发，自动生成的项目模板。</p>
                         <a href="/cli/home">查看详情</a>
                     </div>
                 </li>
@@ -55,7 +55,7 @@
                         <i class="pm-icon-zhuti"></i>
                         <h3>主题</h3>
                         <p>在线主题编辑器，可视化定制和管理站点主题、组件样式。</p>
-                        <a href="">查看详情</a>
+                        <a href="/theme">查看详情</a>
                     </div>
                 </li>
                 <li>
@@ -63,14 +63,30 @@
                         <i class="pm-icon-shengtai"></i>
                         <h3>生长</h3>
                         <p>提出的问题能得到有效且及时的解决，帮助开发者更完善的解决技术难题，丰富品茗开发者。</p>
-                        <a href="">查看详情</a>
+                        <a href="//127.0.0.1:7001" target="_blank">查看详情</a>
                     </div>
                 </li>
                 <li>
                     <div class="card">
                         <i class="pm-icon-dashuju"></i>
                         <h3>大数据</h3>
-                        <p>解决品茗前端图表数据的可视化应用，组件封装，做到开箱即用</p>
+                        <p>基于<code>Echarts</code>、<code>G2</code>等等去解决品茗前端图表数据的可视化应用，组件封装，让开发者也能快速理解</p>
+                        <a href="/bigdata/home">查看详情</a>
+                    </div>
+                </li>
+                <li>
+                    <div class="card">
+                        <i class="pm-icon-fuzhi"></i>
+                        <h3>业务组件</h3>
+                        <p>符合目前企业通用的业务组件、或者组件的业务相关逻辑，解决目前前端快速开发，比如上传组件、分页、图片预览、表单提交...</p>
+                        <a href="/bigdata/home">查看详情</a>
+                    </div>
+                </li>
+                <li>
+                    <div class="card">
+                        <i class="pm-icon-gongju-zhuti"></i>
+                        <h3>前端工具(Pm-utils)</h3>
+                        <p>在项目开发过程中的遇到的好的方法或者工具，形成品茗统一的工具库，比如请求封装、正则表达式、复杂数据查找、数据加密...</p>
                         <a href="/bigdata/home">查看详情</a>
                     </div>
                 </li>

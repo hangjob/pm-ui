@@ -11,13 +11,10 @@
                         <a class="link" href="/home">组件</a>
                     </li>
                     <li class="pm-doc-header__top-nav-item">
-                        <a class="link" href="">主题</a>
+                        <a class="link" href="/theme">主题</a>
                     </li>
                     <li class="pm-doc-header__top-nav-item">
-                        <a class="link" href="">生长</a>
-                    </li>
-                    <li class="pm-doc-header__top-nav-item">
-                        <a class="link" href="/bigdata/home">大数据</a>
+                        <a class="link" href="//127.0.0.1:7001" target="_blank">生长</a>
                     </li>
                     <li class="pm-doc-header__top-nav-item">
                         <a class="link" target="_blank" href="https://github.com/hangjob/pm-ui"><img src="@/assets/images/github.svg" alt=""></a>

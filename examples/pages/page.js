@@ -11,6 +11,10 @@ const multiple = {
         entry: 'examples/pages/cli',
         chunks: ['cli'],
     },
+    theme: {
+        entry: 'examples/pages/theme',
+        chunks: ['theme'],
+    },
 }
 
 const entry = {}
