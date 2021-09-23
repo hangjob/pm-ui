@@ -6,6 +6,7 @@ module.exports = {
         '^@/(.*)$': '<rootDir>/examples/$1',
         '^~@/(.*)$': '<rootDir>/packages/$1'
     },
+
     preset: '@vue/cli-plugin-unit-jest',
 
     // 告诉jest去哪里找我们编写的测试文件
