@@ -15,8 +15,8 @@ const navs = [
                 url: '',
             },
             {
-                title: '定制主题',
-                url: '',
+                title: '更换主题',
+                url: '/updata/theme',
             },
         ],
     },

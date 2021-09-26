@@ -194,7 +194,9 @@ const tintColor = (c, tint) => {
 
 export default {
     created () {
-
+        Object.keys(original).forEach(key => {
+            this.$set(this,key,original[key])
+        })
     },
     mounted () {
         this.setGlobal();
@@ -229,32 +231,7 @@ export default {
     data () {
         return {
             global: {},
-            colorLine: ['Primary', 'Success', 'Warning', 'Danger', 'Info'],
-            'color_primary': '',
-            'color_success': '',
-            'color_warning': '',
-            'color_danger': '',
-            'color_info': '',
-            'color_white': '',
-            'color_black': '',
-            'color_text_primary': '',
-            'color_text_regular': '',
-            'color_text_secondary': '',
-            'color_text_placeholder': '',
-            'border_color_base': '',
-            'border_color_light': '',
-            'border_color_lighter': '',
-            'border_color_extra_light': '',
-            'font_size_extra_large': '',
-            'font_size_large': '',
-            'font_size_medium': '',
-            'font_size_base': '',
-            'font_size_small': '',
-            'font_size_extra_small': '',
-            'font_weight_primary': 0,
-            'font_weight_secondary': 0,
-            'font_line_height_primary': '',
-            'font_line_height_secondary': '',
+            colorLine: ['Primary', 'Success', 'Warning', 'Danger', 'Info']
         }
     },
 }

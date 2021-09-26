@@ -1,7 +1,7 @@
 <template>
     <div id="app">
         <PmTop/>
-        <div class="">
+        <div>
             <Preview/>
         </div>
     </div>
