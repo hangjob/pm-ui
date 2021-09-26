@@ -8,6 +8,7 @@ const Index = () => import('@/views/index')
 const Home = () => import('@/views/home')
 const Button = () => import('@/views/button/doc/index.md')
 const Quickstart = () => import('@/views/quickstart/doc/index.md')
+const Theme = () => import('@/views/theme/doc/index.md')
 const mainRoutes = [
     {
         path: '/',
@@ -36,6 +37,14 @@ const mainRoutes = [
                 component: Quickstart,
                 meta: {
                     title: '快速上手',
+                },
+            },
+            {
+                path: '/updata/theme',
+                name: 'updataTheme',
+                component: Theme,
+                meta: {
+                    title: '更换主题',
                 },
             },
             {

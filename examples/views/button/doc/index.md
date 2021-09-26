@@ -212,7 +212,7 @@ Button 组件提供除了默认值以外的三种尺寸，可以在不同场景�
 <template>
     <div>
         <div class="pm-row">
-            <pm-button @click="handleClick1()" type="primary">连续点击-无防抖、五节流{{num1}}</pm-button>
+            <pm-button @click="handleClick1()" type="primary">连续点击-无防抖、无节流{{num1}}</pm-button>
             <pm-button debounce @click="handleClick2()" type="primary">连续点击-测试防抖{{num2}}</pm-button>
             <pm-button throttle @click="handleClick3()" type="primary">连续点击-测试节流{{num3}}</pm-button>
         </div>
