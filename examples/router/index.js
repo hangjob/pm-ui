@@ -9,6 +9,8 @@ const Home = () => import('@/views/home')
 const Button = () => import('@/views/button/doc/index.md')
 const Quickstart = () => import('@/views/quickstart/doc/index.md')
 const Theme = () => import('@/views/theme/doc/index.md')
+const Timeline = () => import('@/views/timeline/doc/index.md')
+const Logs = () => import('@/views/logs/index')
 const mainRoutes = [
     {
         path: '/',
@@ -29,6 +31,14 @@ const mainRoutes = [
                 component: Home,
                 meta: {
                     title: '首页',
+                },
+            },
+            {
+                path: '/logs',
+                name: 'logs',
+                component: Logs,
+                meta: {
+                    title: '更新日志',
                 },
             },
             {
@@ -55,6 +65,14 @@ const mainRoutes = [
                     title: 'Button按钮',
                 },
             },
+            {
+                path: '/timeline',
+                name: 'timeline',
+                component: Timeline,
+                meta: {
+                    title: 'Timeline时间轴',
+                },
+            }
         ],
     },
 ]
