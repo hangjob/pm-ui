@@ -2,6 +2,8 @@ import PmButton from './button'
 import PmButtonGroup from './button-group'
 import PmRow from './row'
 import PmCol from './col'
+import PmTimeline from './timeline'
+import PmTimelineItem from './timelineItem'
 
 // 存储组件列表
 const components = [
@@ -9,6 +11,8 @@ const components = [
     PmButtonGroup,
     PmRow,
     PmCol,
+    PmTimeline,
+    PmTimelineItem
 ]
 
 // 定义 install 方法，接收 Vue 作为参数。如果使用 use 注册插件，则所有的组件都将被注册
@@ -38,4 +42,6 @@ export default {
     PmButtonGroup,
     PmRow,
     PmCol,
+    PmTimeline,
+    PmTimelineItem
 }

@@ -1,0 +1,14 @@
+@import "./common/var.less";
+@import "./common/utils.less";
+
+.pm-timeline {
+    margin: 0;
+    font-size: @--font-size-base;
+    list-style: none;
+
+    & .pm-timeline-item:last-child {
+        & .pm-timeline-item__tail {
+            display: none;
+        }
+    }
+}

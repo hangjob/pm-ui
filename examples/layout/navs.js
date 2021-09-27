@@ -12,7 +12,7 @@ const navs = [
             },
             {
                 title: '更新日志',
-                url: '',
+                url: '/logs',
             },
             {
                 title: '更换主题',
@@ -66,6 +66,15 @@ const navs = [
             },
         ],
     },
+    {
+        title:'显示组件',
+        children:[
+            {
+                title: '时间轴',
+                url: '/timeline',
+            }
+        ]
+    }
 ]
 
 export {

@@ -15,6 +15,11 @@ const multiple = {
         entry: 'examples/pages/theme',
         chunks: ['theme'],
     },
+    demtest: {
+        entry: 'examples/pages/demtest',
+        chunks: ['demtest'],
+        title: '组件测试',
+    },
 }
 
 const entry = {}
