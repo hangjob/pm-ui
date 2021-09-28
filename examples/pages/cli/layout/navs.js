@@ -10,6 +10,10 @@ const navs = [
                 title: '安装',
                 url: '/cli/install',
             },
+            {
+                title: '更新日志',
+                url: '/cli/logs',
+            },
         ],
     },
     {

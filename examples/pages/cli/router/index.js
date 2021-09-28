@@ -7,6 +7,7 @@ const Home = () => import('@/pages/cli/views/home/index.md')
 const Install = () => import('@/pages/cli/views/install/index.md')
 const Createprj = () => import('@/pages/cli/views/createprj/index.md')
 const Basics = () => import('@/pages/cli/views/basics/index.md')
+const Logs = () => import('@/pages/cli/views/logs/index')
 const mainRoutes = [
     {
         path: '/cli',
@@ -43,6 +44,14 @@ const mainRoutes = [
                 component: Basics,
                 meta: {
                     title: '基础',
+                },
+            },
+            {
+                path: '/cli/logs',
+                name: '/cli/logs',
+                component: Logs,
+                meta: {
+                    title: '更新日志',
                 },
             },
         ],

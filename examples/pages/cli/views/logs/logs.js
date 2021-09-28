@@ -1,22 +1,43 @@
 export default [
     {
-        v: '0.3.0',
+        v: '0.1.0',
         time: '2021-08',
         todos: [
             {
-                content: '开发pm-cli脚手架',
+                content: '初始化pm-cli前端脚手架',
             },
             {
-                content: '创建Html模板、Vue2.0模板、Vue3.0模板、App模板、Vue3.0ts模板、Vite下一代脚手架',
+                content: '建立完整项目结构，注入全局pm-cli，增加用户提示',
             },
             {
-                content: '用户选择模板，完成文件创建，项目目录创建，依赖包下载',
+                content: '调整文件结构，及执行策略',
             },
             {
-                content: '提取Markdown格式文档中内容，做进一步的优化，包括对Html标签，Script脚本',
+                content: '异步操作操作文件流替换同步操作',
             },
             {
-                content: '编写一个基础Button组件',
+                content: '创建Html模板、Vue2.0模板、Vue3.0模板、App模板',
+            },
+        ],
+    },
+    {
+        v: '0.2.0',
+        time: '2021-09',
+        todos: [
+            {
+                content: '增加模板编译完成、下载依赖提示',
+            },
+            {
+                content: '使用cheerio，重写index.html模板',
+            },
+            {
+                content: '增加Vue3.0ts、下一代Vite脚手架',
+            },
+            {
+                content: '获取用户系统信息、判断Node版本',
+            },
+            {
+                content: '修复cheerio<% >转义符问题',
             },
         ],
     },
