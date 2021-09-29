@@ -38,7 +38,8 @@ module.exports = {
             }).
             end().
             use('markdown-loader').
-            loader(require('path').resolve(__dirname, './build/md-loader/index.js')).
+            loader(require('path').
+                resolve(__dirname, './build/md-loader/index.js')).
             end()
     },
     configureWebpack: config => {

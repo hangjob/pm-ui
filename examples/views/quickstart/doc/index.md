@@ -34,9 +34,9 @@ vue create pm-demo
 在现有项目中使用 Pm-ui 时，可以通过
 
 ```bash
-npm install pming-ui -S
+npm install pm-ui -S
 # OR
-yarn global add pming-ui
+yarn global add pm-ui
 ```
 
 :::
@@ -49,8 +49,8 @@ yarn global add pming-ui
 
 ```js
 import Vue from 'vue';
-import PmUI from "pming-ui";
-import 'pming-ui/lib/css/index.min.css';
+import PmUI from "pm-ui";
+import 'pm-ui/lib/css/index.css';
 import App from './App.vue';
 
 Vue.use(PmUI);
@@ -71,8 +71,8 @@ new Vue({
 
 ```js
 import Vue from 'vue';
-import { Button, Select } from "pming-ui";
-import 'pming-ui/lib/css/index.min.css';
+import { Button, Select } from "pm-ui";
+import 'pm-ui/lib/css/index.css';
 import App from './App.vue';
 
 Vue.component(Button.name, Button);
@@ -97,7 +97,7 @@ import {
     Button,
     Notification,
     Message
-} from 'pming-ui';
+} from 'pm-ui';
 
 Vue.use(Select);
 Vue.use(Button);
@@ -122,7 +122,7 @@ Vue.prototype.$message = Message;
 
 ```js
 import Vue from 'vue';
-import PmUI from 'pming-ui';
+import PmUI from 'pm-ui';
 
 Vue.use(PmUI, { size: 'small', zIndex: 3000 });
 ```
@@ -131,7 +131,7 @@ Vue.use(PmUI, { size: 'small', zIndex: 3000 });
 
 ```js
 import Vue from 'vue';
-import { Button } from 'pming-ui';
+import { Button } from 'pm-ui';
 
 Vue.prototype.$PMUI = { size: 'small', zIndex: 3000 };
 Vue.use(Button);
