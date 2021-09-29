@@ -1,45 +1,6 @@
 <template>
     <div id="app">
-        <PmTimeline>
-            <pm-timeline-item
-                v-for="(activity, index) in activities"
-                :key="index"
-                :timestamp="activity.timestamp">
-                {{ activity.content }}
-            </pm-timeline-item>
-        </PmTimeline>
-        <PmTimeline>
-            <pm-timeline-item
-                v-for="(activity, index) in activities"
-                :key="index">
-                <div>
-                    222
-                </div>
-            </pm-timeline-item>
-        </PmTimeline>
-        <PmTimeline>
-            <pm-timeline-item
-                v-for="(activity, index) in activities"
-                border="2px solid red"
-                :key="index">
-                <div>
-                    222
-                </div>
-            </pm-timeline-item>
-        </PmTimeline>
-        <PmTimeline>
-            <pm-timeline-item
-                v-for="(activity, index) in activities"
-                :key="index"
-                :icon="activity.icon"
-                :color="activity.color"
-                :size="activity.size"
-                :hide-timestamp="false"
-                placement="top"
-                :timestamp="activity.timestamp">
-                {{ activity.content }}
-            </pm-timeline-item>
-        </PmTimeline>
+      <pm-button>2222</pm-button>
     </div>
 </template>
 

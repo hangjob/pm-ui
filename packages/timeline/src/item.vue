@@ -10,7 +10,7 @@
                ]"
              :style="{
                 backgroundColor: color,
-                border:border,
+                border:border
             }"
         >
             <i v-if="icon" class="pm-timeline-item__icon" :class="icon"></i>
@@ -68,14 +68,7 @@ export default {
 
         icon: String,
 
-        border:String
-    },
-    computed: {
-        fontSize () {
-            if (this.icon) {
-
-            }
-        },
-    },
+        border: String
+    }
 }
 </script>
