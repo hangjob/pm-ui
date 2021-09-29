@@ -15,7 +15,7 @@ gulp.task('less', function () {
         .pipe(less({
             plugins: [autoprefix],
         })).pipe(sourcemaps.init()).pipe(concat('style.css')).pipe(rename({
-            suffix: '.min',
+            suffix: '',
         })).pipe(gulp.dest('./lib/css')) //输出到“./dist/css”路径
 })
 
@@ -30,8 +30,8 @@ gulp.task('pxToRem', function () {
 // 重新命名 - 为index
 gulp.task('renameIndex', function () {
     return gulp.src('./lib/*.js').pipe(rename(function (path) {
-        if (path.basename === 'pming-ui.umd.min'){
-            path.basename = 'index.min'
+        if (path.basename === 'pm-ui.umd'){
+            path.basename = 'index'
         }
     })).pipe(gulp.dest('./lib'))
 })
