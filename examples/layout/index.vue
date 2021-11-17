@@ -21,15 +21,4 @@ export default {
 </script>
 
 <style lang="less" scoped>
-.pm-doc-container{
-    width: 1680px;
-    margin: 0px auto 0 auto;
-    box-sizing: border-box;
-    padding-left: 310px;
-    overflow: hidden;
-    padding-right: 200px;
-    .pm-doc-content{
-
-    }
-}
 </style>

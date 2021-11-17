@@ -5,7 +5,8 @@ import router from './router'
 // 导入组件库
 import PmUI from '../../../packages'
 import '../../../packages/style/index.less'
-
+import '../../style/layout.less'
+import '../../style/media.less'
 Vue.use(PmUI)
 // 基础配置
 import '@/style/reset.less'

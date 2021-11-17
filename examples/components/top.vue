@@ -41,7 +41,6 @@ export default {
         .pm-doc-row-header__top {
             height: 60px;
             line-height: 60px;
-            padding: 0 180px;
             display: flex;
             align-items: center;
 
