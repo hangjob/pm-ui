@@ -1,0 +1,199 @@
+@charset "utf-8";
+/*!
+ * @名称：base.css
+ * @功能：1、重设浏览器默认样式
+ *       2、设置通用原子类
+ */
+/* 防止用户自定义背景颜色对网页的影响，添加让用户可以自定义字体 */
+html {
+    background-color: #f7f8fa;
+    color: #333;
+}
+
+/* 内外边距通常让各个浏览器样式的表现位置不同 */
+html, body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, textarea, p, blockquote, th, td, hr, button, article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+    margin: 0;
+    padding: 0;
+}
+
+input, select, textarea {
+    font-size: 100%;
+}
+
+/* 去掉 table cell 的边距并让其边重合 */
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/* ie bug：th 不继承 text-align */
+th {
+    text-align: inherit;
+}
+
+/* 去除默认边框 */
+fieldset, img {
+    border: none;
+}
+
+/* ie6 7 8(q) bug 显示为行内表现 */
+iframe {
+    display: block;
+}
+
+/* 去掉 firefox 下此元素的边框 */
+abbr, acronym {
+    border: none;
+    font-variant: normal;
+}
+
+/* 一致的 del 样式 */
+del {
+    text-decoration: line-through;
+}
+
+address, caption, cite, code, dfn, em, th, var {
+    font-style: normal;
+    font-weight: 500;
+}
+
+/* 去掉列表前的标识，li 会继承 */
+ol, ul {
+    list-style: none;
+}
+
+/* 对齐是排版最重要的因素，别让什么都居中 */
+caption, th {
+    text-align: left;
+}
+
+/* 来自yahoo，让标题都自定义，适应多个系统应用 */
+h1, h2, h3, h4, h5, h6 {
+    font-size: 100%;
+    font-weight: 500;
+}
+
+q:before, q:after {
+    content: '';
+}
+
+/* 统一上标和下标 */
+sub, sup {
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
+}
+
+sup {
+    top: -0.5em;
+}
+
+sub {
+    bottom: -0.25em;
+}
+
+/* 让链接在 hover 状态下显示下划线 */
+a:hover {
+    text-decoration: underline;
+}
+
+/* 默认不显示下划线，保持页面简洁 */
+ins, a {
+    text-decoration: none;
+}
+
+/* 去除 ie6 & ie7 焦点点状线 */
+a:focus, *:focus {
+    outline: none;
+}
+
+/* 清除浮动 */
+.clearfix:before, .clearfix:after {
+    content: "";
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
+    overflow: hidden;
+}
+
+.clearfix {
+    zoom: 1; /* for ie6 & ie7 */
+}
+
+.clear {
+    clear: both;
+    display: block;
+    font-size: 0;
+    height: 0;
+    line-height: 0;
+    overflow: hidden;
+}
+
+/* 设置显示和隐藏，通常用来与 js 配合 */
+.hide {
+    display: none;
+}
+
+.show {
+    display: block;
+}
+
+/* 设置浮动，减少浮动带来的 bug */
+.fl, .fr {
+    display: inline;
+}
+
+.fl {
+    float: left;
+}
+
+.fr {
+    float: right;
+}
+
+/**自定义样式**/
+.pm-doc-content {
+    h2.view-title{
+        margin: 45px 0 20px;
+        font-size: 25px;
+        color: #323233;
+        font-weight: normal;
+        line-height: 1.5;
+    }
+    h2.view-title--pointer{
+        cursor: pointer;
+    }
+}
+
+::-webkit-scrollbar {
+    width: 6px;
+    height:0px;
+}
+/* 滚动条的滑轨背景颜色 */
+::-webkit-scrollbar-track {
+    background-color: #f7f8fa;
+    border-radius:5px;
+}
+/* 滑块颜色 */
+::-webkit-scrollbar-thumb {
+    background-color: #0a2c56;
+    border-radius:10px;
+}
+/*内层轨道的颜色*/
+::-webkit-scrollbar-track-piece{
+    background-color:#f7f8fa;
+    border-radius:5px;
+}
+/* 滑轨两头的监听按钮颜色 */
+::-webkit-scrollbar-button {
+    background-color:#f7f8fa;
+    width:0;
+    height:0;
+}
+/* 横向滚动条和纵向滚动条相交处尖角的颜色 */
+::-webkit-scrollbar-corner {
+    background-color: #f7f8fa;
+}

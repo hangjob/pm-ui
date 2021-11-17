@@ -1,0 +1,15 @@
+/build
+/examples
+/html
+/lib
+/public
+/src
+/test
+*.sh
+node_modules
+
+iconfont.*
+*.md
+*.woff
+*.ttf
+vue.config.js

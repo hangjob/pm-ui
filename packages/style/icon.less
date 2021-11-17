@@ -1,0 +1,146 @@
+@import "common/var.less";
+
+@font-face {
+    font-family: 'pm-icons';
+    font-weight: normal;
+    font-display: @--font-display;
+    font-style: normal;
+    src: url('./fonts/iconfont.woff') format('woff'), url('./fonts/iconfont.woff2') format('woff2'), url('./fonts/iconfont.ttf') format('truetype');
+}
+
+[class^="pm-icon-"],
+[class*="pm-icon-"] {
+    font-family: 'pm-icons' !important; /* 防止浏览器扩展更改字体的问题 */
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    vertical-align: baseline;
+    display: inline-block;
+    -webkit-font-smoothing: antialiased; /* 更好的字体渲染 */
+    -moz-osx-font-smoothing: grayscale;
+}
+
+// icon 会自带一些属性
+.pm-icon-loading {
+    animation: rotating 2s linear infinite;
+}
+
+.pm-icon--right {
+    margin-left: 5px;
+}
+
+/* 结束 */
+.pm-icon-loading:before {
+    content: "\e608";
+}
+
+.pm-icon-edit:before {
+    content: "\e600";
+}
+
+.pm-icon-delete:before {
+    content: "\e603";
+}
+
+.pm-icon-share:before {
+    content: "\e614";
+}
+
+.pm-icon-arrow-left:before {
+    content: "\e601";
+}
+
+.pm-icon-arrow-right:before {
+    content: "\e602";
+}
+
+.pm-icon-mianxingshizi:before {
+    content: "\e628";
+}
+
+.pm-icon-mianxingshanzha:before {
+    content: "\e627";
+}
+
+.pm-icon-chrome:before {
+    content: "\e640";
+}
+
+.pm-icon-liulanqi:before {
+    content: "\e6e2";
+}
+
+.pm-icon-zhuti:before {
+    content: "\e89c";
+}
+
+.pm-icon-gongju-zhuti:before {
+    content: "\ed36";
+}
+
+.pm-icon-zujian:before {
+    content: "\e677";
+}
+
+.pm-icon-guide:before {
+    content: "\e604";
+}
+
+.pm-icon-shengtai:before {
+    content: "\e605";
+}
+
+.pm-icon-tubiao:before {
+    content: "\e62c";
+}
+
+.pm-icon-dashuju:before {
+    content: "\e62c";
+}
+
+.pm-icon-zhongzai:before {
+    content: "\e664";
+}
+
+.pm-icon-chakan:before {
+    content: "\e607";
+}
+
+.pm-icon-zhongzai1:before {
+    content: "\e61a";
+}
+
+.pm-icon-fangda:before {
+    content: "\e62d";
+}
+
+.pm-icon-fuzhi:before {
+    content: "\e697";
+}
+
+.pm-icon-bianzu:before {
+    content: "\e6af";
+}
+
+.pm-icon-fuzhi1:before {
+    content: "\e655";
+}
+
+.pm-icon-fangda1:before {
+    content: "\e609";
+}
+
+.pm-icon-179:before {
+    content: "\e60a";
+}
+
+.pm-icon-daima:before {
+    content: "\e60c";
+}
+
+.pm-icon-shequ2-copy:before {
+    content: "\e606";
+}
