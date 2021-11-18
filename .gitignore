@@ -3,6 +3,7 @@ node_modules
 /dist
 /lib
 /examples/pages/demotest
+/html/demotest.html
 
 # local env files
 .env.local
