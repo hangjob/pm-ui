@@ -7,7 +7,7 @@
 ```html
 
 <template>
-    <div class="pm-row">
+    <pm-row>
         <PmTimeline>
             <pm-timeline-item
                 v-for="(activity, index) in activities"
@@ -16,7 +16,7 @@
                 {{ activity.content }}
             </pm-timeline-item>
         </PmTimeline>
-    </div>
+    </pm-row>
 </template>
 <script>
     export default {
@@ -53,7 +53,7 @@
 ```html
 
 <template>
-    <div class="pm-row">
+    <pm-row>
         <PmTimeline>
             <pm-timeline-item
                 v-for="(activity, index) in activities"
@@ -67,7 +67,7 @@
                 {{ activity.content }}
             </pm-timeline-item>
         </PmTimeline>
-    </div>
+    </pm-row>
 </template>
 <script>
     export default {
@@ -116,7 +116,7 @@
 ```html
 
 <template>
-    <div class="pm-row">
+    <pm-row>
         <PmTimeline>
             <pm-timeline-item
                 v-for="(activity, index) in activities"
@@ -125,7 +125,7 @@
                 {{ activity.content }} - {{ activity.timestamp }}
             </pm-timeline-item>
         </PmTimeline>
-    </div>
+    </pm-row>
 </template>
 <script>
     export default {

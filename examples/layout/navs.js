@@ -72,6 +72,10 @@ const navs = [
             {
                 title: '时间轴',
                 url: '/timeline',
+            },
+            {
+                title: '图片',
+                url: '/image',
             }
         ]
     }

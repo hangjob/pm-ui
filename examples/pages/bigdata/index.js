@@ -5,7 +5,7 @@ import router from './router'
 // 导入组件库
 import PmUI from '../../../packages'
 import '../../../packages/style/index.less'
-
+import '../../style/media.less'
 // 导入插件
 import './plugins/g2'
 import './plugins/echarts'
