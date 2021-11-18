@@ -62,6 +62,11 @@ npm login
 npm publish
 ```
 
+## 怎么添加自己写的组件演示
+>首次运行项目需要在`examples/pages/demotest`，新建这个文件夹`demotest`，内容粘贴`examples/pages/demtest`文件中的代码即可
+
+>浏览器直接引入运行方式，需要在`html/demotest.html`，新建这个html`demotest.html`,内容粘贴`html/index.html`中的代码即可
+> 
 ## 测试
 
 [测试断言说明-1](https://www.jianshu.com/p/c1b5676c1edd)
