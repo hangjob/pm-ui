@@ -200,7 +200,7 @@ module.exports = function (source) {
            }
          }
        </script>
-       <style lang='less'>
+       <style lang='less' scoped>
          ${Array.from(styleCodeList, m => m.content).join('\n')}
        </style>`
 }

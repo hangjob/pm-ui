@@ -20,6 +20,11 @@ const multiple = {
         chunks: ['demtest'],
         title: '组件测试',
     },
+    demotest: {
+        entry: 'examples/pages/demotest',
+        chunks: ['demotest'],
+        title: '组件测试-不上传git',
+    },
 }
 
 const entry = {}

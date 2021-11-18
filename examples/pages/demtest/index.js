@@ -5,6 +5,8 @@ import App from './App.vue'
 import PmUI from '../../../packages'
 import '../../../packages/style/index.less'
 import '../../style/media.less'
+import '../../views/style/index'
+
 Vue.config.productionTip = false
 Vue.use(PmUI)
 

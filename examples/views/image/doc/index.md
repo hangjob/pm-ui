@@ -6,8 +6,8 @@
 ```html
 
 <template>
-        <div class="pm-row">
-                <div class="pm-block" v-for="fit in fits" :key="fit">
+        <div class="image-demo">
+                <div class="image-container" v-for="fit in fits" :key="fit">
                     <span class="pm-demonstration">{{ fit }}</span>
                     <pm-image style="width: 100px; height: 100px"
                               :src="url"
@@ -25,9 +25,6 @@
         }
     }
 </script>
-<style lang="less">
- 
-</style>
 ```
 
 :::

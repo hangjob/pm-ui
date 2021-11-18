@@ -9,6 +9,9 @@ module.exports = {
     // 修改 pages 入口
     pages: pages,
     // 扩展 webpack 配置
+    css:{
+        requireModuleExtension:true  
+    },
     chainWebpack: config => {
         config.resolve.alias.set('@', path.resolve('examples')).
             set('~@', path.resolve('packages'))
