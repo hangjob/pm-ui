@@ -6,8 +6,21 @@
     display: inline-block;
     overflow: hidden;
 
-    & .pm-image__inner {
+    img, .pm-image__error, .pm-image__inner, .pm-image__placeholder {
         width: 100%;
         height: 100%;
+    }
+
+    .pm-image__error {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 14px;
+        color: @--color-info;
+        vertical-align: middle;
+        background: @--background-color-base;
+    }
+    .image-demo__lazy{
+
     }
 }
