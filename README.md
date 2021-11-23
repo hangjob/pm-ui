@@ -50,8 +50,9 @@ npm run lib
 ### 发布
 
 #### 第一次发包
-**发包需要注意改动版本号**
-```bash
+
+# **发包需要注意改动版本号**
+```_bash_
 # 添加账户，没有去npm上注册
 npm adduser
 npm login
