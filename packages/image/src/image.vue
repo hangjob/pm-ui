@@ -158,7 +158,7 @@ export default {
         },
         // 加载状态 start -------------------------------------------------------------------------------------------
         loadImage() {
-            if (this.$isServer) return;
+            if (this.$isServer) {return;}
             // reset status
             this.loading = true;
             this.error = false;
@@ -216,7 +216,7 @@ export default {
         //移除 懒加载 加载
         removeLazyLoadListener() {
             const {_scrollContainer, _lazyLoadHandler} = this;
-            if (this.$isServer || !_scrollContainer || !_lazyLoadHandler) return;
+            if (this.$isServer || !_scrollContainer || !_lazyLoadHandler) {return;}
             off(_scrollContainer, 'scroll', _lazyLoadHandler);
             this._scrollContainer = null;
             this._lazyLoadHandler = null;
