@@ -1,0 +1,84 @@
+@import "./common/var.less";
+@import "./common/utils.less";
+
+.pm-card {
+    margin-bottom: 16px;
+    border-radius: 4px;
+    border: 1px solid #ebeef5;
+    background-color: #fff;
+    overflow: hidden;
+    color: #303133;
+    transition: .3s;
+    font-size: 14px;
+
+    &__header {
+        padding: 18px 20px;
+        border-bottom: 1px solid #ebeef5;
+        box-sizing: border-box;
+    }
+
+    .pm-card__body {
+        padding: 20px;
+    }
+
+    .card-image{
+        width: 100%;
+        display: block;
+    }
+
+    .card-text{
+        font-size: 16px;
+    }
+
+    .clearfix{
+        margin-top: 13px;
+        line-height: 12px;
+
+        .card-time{
+            color: #999;
+        }
+
+        .card-button{
+            padding: 0;
+            float: right;
+        }
+    }
+}
+
+.is-always-shadow {
+    box-shadow: 0 2px 12px 0 rgba(0,0,0,.1);
+
+    &:hover,
+    &:focus {
+        box-shadow: 0 2px 12px 0 rgba(0,0,0,.1);
+    }
+}
+
+.is-hover-shadow {
+    box-shadow: none;
+
+    &:hover,
+    &:focus {
+        box-shadow: 0 2px 12px 0 rgba(0,0,0,.1);
+    }
+}
+
+.box-card {
+    width: 480px;
+    font-size: 14px;
+
+    .card-header:before,
+    .card-header:after {
+        display: table;
+        content: "";
+    }
+
+    .card-header:after {
+        clear: both
+    }
+    
+    .card-item {
+        font-size: 14px;
+        margin-bottom: 18px;
+    }
+}

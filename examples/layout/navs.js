@@ -76,6 +76,10 @@ const navs = [
             {
                 title: '图片',
                 url: '/image',
+            },
+            {
+                title: 'card 卡片',
+                url: '/card',
             }
         ]
     }

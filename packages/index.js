@@ -1,3 +1,11 @@
+/*
+ * @Descripttion: 修改了一些内容
+ * @version: v1.0
+ * @Author: htt
+ * @Date: 2021-12-30 09:06:09
+ * @LastEditors: htt
+ * @LastEditTime: 2022-03-04 10:56:48
+ */
 import PmButton from './button'
 import PmButtonGroup from './button-group'
 import PmRow from './row'
@@ -5,6 +13,7 @@ import PmCol from './col'
 import PmTimeline from './timeline'
 import PmTimelineItem from './timelineItem'
 import PmImage from './image'
+import PmCard from './card'
 
 // 存储组件列表
 const components = [
@@ -14,8 +23,8 @@ const components = [
     PmCol,
     PmTimeline,
     PmTimelineItem,
-    PmImage
-
+    PmImage,
+    PmCard
 ]
 
 // 定义 install 方法，接收 Vue 作为参数。如果使用 use 注册插件，则所有的组件都将被注册
@@ -47,5 +56,6 @@ export default {
     PmCol,
     PmTimeline,
     PmTimelineItem,
-    PmImage
+    PmImage,
+    PmCard
 }

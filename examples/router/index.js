@@ -12,6 +12,8 @@ const Theme = () => import('@/views/theme/doc/index.md')
 const Timeline = () => import('@/views/timeline/doc/index.md')
 const Logs = () => import('@/views/logs/index')
 const Image=()=>import('@/views/image/doc/index.md')
+const Card=()=>import('@/views/card/doc/index.md')
+
 const mainRoutes = [
     {
         path: '/',
@@ -80,6 +82,14 @@ const mainRoutes = [
                 component: Image,
                 meta: {
                     title: 'Image图片',
+                },
+            },
+            {
+                path: '/card',
+                name: 'card',
+                component: Card,
+                meta: {
+                    title: 'Card卡片',
                 },
             }
         ],
